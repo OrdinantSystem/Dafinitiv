@@ -26,7 +26,11 @@ test('chat exercise routes, catalog, and prompt files are present', () => {
   assert.match(chatComponent, /minimumComposerHeight = exerciseMode \? 24 : 28/);
   assert.match(chatComponent, /composerPlaceholder = exerciseMode \? "Type here…" : `Message \$\{runtime\.model\}\.\.\.`/);
   assert.match(chatComponent, /exerciseMode \? "min-h-\[calc\(100dvh-7rem\)\] md:min-h-\[720px\]" : "min-h-\[720px\]"/);
-  assert.match(chatComponent, /exerciseMode \? "px-0 pb-0 pt-2" : "px-1 pb-1 pt-5"/);
+  assert.match(chatComponent, /padding=\{exerciseMode \? "none" : "default"\}/);
+  assert.match(chatComponent, /exerciseMode \? "px-\[5px\] pb-0 pt-2" : "px-1 pb-1 pt-5"/);
+  assert.match(chatComponent, /exerciseMode \? "relative rounded-\[1\.45rem\] px-\[5px\] py-2" : "rounded-\[1\.7rem\] px-3\.5 py-2\.5"/);
+  assert.match(chatComponent, /exerciseMode \? "max-w-\[96%\] px-2\.5 py-2" : "max-w-\[80%\] px-3 py-2"/);
+  assert.match(chatComponent, /exerciseMode[\s\S]*\? "max-w-\[98%\] bg-surface-container-low text-on-surface-variant ghost-outline"/);
   assert.match(chatComponent, /pointer-events-none absolute inset-y-0 right-2 flex items-end pb-2/);
   assert.match(detailPage, /content: `\$\{exercise\.title\}\. Start when you're ready\.`/);
   assert.match(detailPage, /conversationSubtitle="Exercise"/);

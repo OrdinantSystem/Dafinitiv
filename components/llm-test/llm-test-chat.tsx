@@ -1082,9 +1082,13 @@ export function LlmTestChat({
             "relative flex flex-col overflow-hidden xl:sticky xl:top-8 xl:h-[calc(100dvh-8rem)]",
             exerciseMode ? "min-h-[calc(100dvh-7rem)] md:min-h-[720px]" : "min-h-[720px]"
           )}
+          padding={exerciseMode ? "none" : "default"}
           tone="default"
         >
-          <div className="flex items-center justify-between gap-4 border-b border-outline-variant/20 pb-5">
+          <div className={cn(
+            "flex items-center justify-between gap-4 border-b border-outline-variant/20 pb-5",
+            exerciseMode && "px-[5px] pt-[5px]"
+          )}>
             <div>
               <p className="editorial-kicker">{conversationSubtitle}</p>
               <p className="mt-2 text-lg font-extrabold tracking-[-0.03em] text-on-surface">
@@ -1125,13 +1129,13 @@ export function LlmTestChat({
                   key={message.id}
                 >
                   {showThinkingLoader ? (
-                    <div className="max-w-[82%] px-1 pb-1">
+                    <div className={cn("px-1 pb-1", exerciseMode ? "max-w-[96%]" : "max-w-[82%]")}>
                       <ThinkingDots />
                     </div>
                   ) : null}
 
                   {message.role === "assistant" && hasThinking ? (
-                    <div className="max-w-[82%] px-1 pb-1">
+                    <div className={cn("px-1 pb-1", exerciseMode ? "max-w-[96%]" : "max-w-[82%]")}>
                       <button
                         aria-expanded={Boolean(openThinkingIds[message.id])}
                         className={cn(
@@ -1162,16 +1166,18 @@ export function LlmTestChat({
                   ) : null}
 
                   {message.role !== "assistant" || hasVisibleContent ? (
-                    <div
-                      className={cn(
-                        "max-w-[80%] rounded-[1.05rem] px-3 py-2 shadow-soft",
-                        message.role === "assistant" &&
-                          "bg-surface-container-lowest text-on-surface ghost-outline",
-                        message.role === "user" && "bg-cta-gradient text-on-primary shadow-lift",
-                        message.role === "system" &&
-                          "max-w-[92%] bg-surface-container-low text-on-surface-variant ghost-outline"
-                      )}
-                    >
+                        <div className={cn(
+                          "rounded-[1.05rem] shadow-soft",
+                          exerciseMode ? "max-w-[96%] px-2.5 py-2" : "max-w-[80%] px-3 py-2",
+                          message.role === "assistant" &&
+                            "bg-surface-container-lowest text-on-surface ghost-outline",
+                          message.role === "user" && "bg-cta-gradient text-on-primary shadow-lift",
+                          message.role === "system" &&
+                            (exerciseMode
+                              ? "max-w-[98%] bg-surface-container-low text-on-surface-variant ghost-outline"
+                              : "max-w-[92%] bg-surface-container-low text-on-surface-variant ghost-outline")
+                        )}
+>
                       {renderMode === "preview" && message.role !== "user" ? (
                         <MarkdownPreview content={message.content} />
                       ) : (
@@ -1187,14 +1193,14 @@ export function LlmTestChat({
           <div
             className={cn(
               "border-t border-outline-variant/20 bg-surface-container-lowest/95 backdrop-blur-sm",
-              exerciseMode ? "px-0 pb-0 pt-2" : "px-1 pb-1 pt-5"
+              exerciseMode ? "px-[5px] pb-0 pt-2" : "px-1 pb-1 pt-5"
             )}
           >
             <div
               className={cn(
                 "bg-surface-container shadow-soft ghost-outline",
-                exerciseMode ? "relative rounded-[1.45rem] px-3 py-2" : "rounded-[1.7rem] px-3.5 py-2.5"
-              )}
+                    exerciseMode ? "relative rounded-[1.45rem] px-[5px] py-2" : "rounded-[1.7rem] px-3.5 py-2.5"
+)}
             >
               <textarea
                 className={cn(
