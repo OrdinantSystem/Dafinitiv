@@ -19,6 +19,7 @@ test('chat exercise routes, catalog, and prompt files are present', () => {
   assert.match(detailPage, /getChatExerciseBySlug/);
   assert.match(chatComponent, /defaultSystemPromptId/);
   assert.match(chatComponent, /lockSystemPrompt/);
+  assert.doesNotMatch(detailPage, /dynamic\s*=\s*"force-dynamic"/);
 
   const expectedSlugs = [
     'grammar-repair-studio',

@@ -11,8 +11,6 @@ import type { LlmTestChatMessage } from "@/lib/llm-test/types";
 import { getWebApplicationService } from "@/lib/server/app-service";
 import { getLlmTestSystemPromptOption } from "@/lib/server/llm-test-prompts";
 
-export const dynamic = "force-dynamic";
-
 function getBaseUrlHost(baseUrl: string): string {
   try {
     return new URL(baseUrl).host;
