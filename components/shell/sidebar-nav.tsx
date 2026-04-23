@@ -14,6 +14,7 @@ const NAV_ITEMS: Array<{ href: string; icon: IconName; label: string }> = [
   { href: "/sprechen", icon: "mic", label: "Sprechen" },
   { href: "/grammar-library", icon: "layers", label: "Grammatik" },
   { href: "/mistake-notebook", icon: "notebook", label: "Notebook" },
+  { href: "/chat-exercises", icon: "sparkles", label: "Chat Exercises" },
   { href: "/llm-test", icon: "rocket", label: "LLM Test" },
   { href: "/mock-test", icon: "target", label: "Mock-Test" },
   { href: "/trial", icon: "settings", label: "Trial" }

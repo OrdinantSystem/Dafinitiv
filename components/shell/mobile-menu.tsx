@@ -26,6 +26,7 @@ const MOBILE_ITEMS: Array<{ href: string; icon: IconName; label: string; match?:
   { href: "/sprechen", icon: "mic", label: "Sprechen" },
   { href: "/grammar-library", icon: "layers", label: "Grammatik" },
   { href: "/mistake-notebook", icon: "notebook", label: "Notebook" },
+  { href: "/chat-exercises", icon: "sparkles", label: "Chat Exercises" },
   { href: PRACTICE_HREF, icon: "sparkles", label: "Üben", match: /^\/workspace/ },
   { href: "/llm-test", icon: "rocket", label: "LLM Test" },
   { href: "/mock-test", icon: "target", label: "Mock-Test" },
