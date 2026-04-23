@@ -81,7 +81,7 @@ export function MobileMenu({ pathname }: { pathname: string }) {
         aria-controls="mobile-navigation-drawer"
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
-        className="inline-flex items-center gap-2 rounded-full bg-surface-container-low px-3 py-2 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-on-surface shadow-soft ghost-outline transition-colors hover:bg-surface-container md:hidden"
+        className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-surface-container-low px-3 py-2 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-on-surface shadow-soft ghost-outline transition-colors hover:bg-surface-container md:hidden"
         onClick={() => setOpen((current) => !current)}
         type="button"
       >
