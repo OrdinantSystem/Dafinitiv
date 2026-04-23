@@ -26,12 +26,16 @@ test('prompt library contains shared, testdaf, and training packs', () => {
   const testdafPromptFiles = promptFiles.filter((file) => file.includes(path.join('prompts', 'testdaf')));
   const sharedPromptFiles = promptFiles.filter((file) => file.includes(path.join('prompts', 'shared')));
   const trainingPromptFiles = promptFiles.filter((file) => file.includes(path.join('prompts', 'training')));
+  const trainingChatPromptFiles = promptFiles.filter((file) =>
+    file.includes(path.join('prompts', 'training', 'chat'))
+  );
 
   assert.equal(testdafPromptFiles.length, 23);
   assert.equal(sharedPromptFiles.length, 7);
-  assert.equal(trainingPromptFiles.length, 4);
+  assert.equal(trainingPromptFiles.length, 9);
+  assert.equal(trainingChatPromptFiles.length, 5);
   assert.equal(lib.TESTDAF_PROMPT_PACKS.length, 23);
-  assert.equal(lib.TRAINING_PROMPT_PACKS.length, 4);
+  assert.equal(lib.TRAINING_PROMPT_PACKS.length, 9);
 });
 
 test('mock exam plan preserves section order and total duration', () => {

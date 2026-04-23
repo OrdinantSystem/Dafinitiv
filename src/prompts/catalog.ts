@@ -116,6 +116,76 @@ export const TRAINING_PROMPT_PACKS: PromptPack[] = [
       "writing.written_production",
       "speaking.spoken_production"
     ]
+  },
+  {
+    id: "training.chat.grammar_repair_studio",
+    label: "Grammar Repair Studio",
+    purpose: "Run a chat-based grammar correction and transfer practice loop.",
+    promptPath: "prompts/training/chat/grammar-repair-studio.md",
+    sharedBlocks: SHARED_PROMPT_BLOCKS.map((block) => block.id),
+    supportedModes: ["guided"],
+    outputSchemaName: "ChatExerciseOutput",
+    skillTags: [
+      "grammar.word_order",
+      "grammar.case_and_articles",
+      "grammar.connectors_and_subordination"
+    ]
+  },
+  {
+    id: "training.chat.argument_builder",
+    label: "Argument Builder",
+    purpose: "Train argumentative structure through interactive German chat turns.",
+    promptPath: "prompts/training/chat/argument-builder.md",
+    sharedBlocks: SHARED_PROMPT_BLOCKS.map((block) => block.id),
+    supportedModes: ["guided"],
+    outputSchemaName: "ChatExerciseOutput",
+    skillTags: [
+      "task.argumentation",
+      "discourse.cohesion",
+      "speaking.spoken_production"
+    ]
+  },
+  {
+    id: "training.chat.source_synthesis_coach",
+    label: "Source Synthesis Coach",
+    purpose: "Train source mediation and concise synthesis through guided chat.",
+    promptPath: "prompts/training/chat/source-synthesis-coach.md",
+    sharedBlocks: SHARED_PROMPT_BLOCKS.map((block) => block.id),
+    supportedModes: ["guided"],
+    outputSchemaName: "ChatExerciseOutput",
+    skillTags: [
+      "task.source_mediation",
+      "writing.written_production",
+      "reading.detail_comprehension"
+    ]
+  },
+  {
+    id: "training.chat.speaking_outline_coach",
+    label: "Speaking Outline Coach",
+    purpose: "Build timing-aware speaking plans through short interactive coaching turns.",
+    promptPath: "prompts/training/chat/speaking-outline-coach.md",
+    sharedBlocks: SHARED_PROMPT_BLOCKS.map((block) => block.id),
+    supportedModes: ["guided"],
+    outputSchemaName: "ChatExerciseOutput",
+    skillTags: [
+      "speaking.spoken_production",
+      "task.task_fulfillment",
+      "discourse.cohesion"
+    ]
+  },
+  {
+    id: "training.chat.register_rewrite_lab",
+    label: "Register Rewrite Lab",
+    purpose: "Improve academic register and stylistic precision via rewriting chat drills.",
+    promptPath: "prompts/training/chat/register-rewrite-lab.md",
+    sharedBlocks: SHARED_PROMPT_BLOCKS.map((block) => block.id),
+    supportedModes: ["guided"],
+    outputSchemaName: "ChatExerciseOutput",
+    skillTags: [
+      "discourse.register",
+      "lexicon.academic_vocabulary",
+      "writing.written_production"
+    ]
   }
 ];
 

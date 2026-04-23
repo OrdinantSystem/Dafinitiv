@@ -218,11 +218,19 @@ function ThinkingDots() {
 export function LlmTestChat({
   initialMessages,
   runtime,
-  systemPromptOptions
+  systemPromptOptions,
+  defaultSystemPromptId = "none",
+  lockSystemPrompt = false,
+  conversationTitle = "MiniMax Test Chat",
+  conversationSubtitle = "Conversation"
 }: {
   initialMessages: LlmTestChatMessage[];
   runtime: LlmTestRuntimeSnapshot;
   systemPromptOptions: LlmTestSystemPromptOption[];
+  defaultSystemPromptId?: string;
+  lockSystemPrompt?: boolean;
+  conversationTitle?: string;
+  conversationSubtitle?: string;
 }) {
   const [messages, setMessages] = useState<LlmTestChatMessage[]>(initialMessages);
   const [input, setInput] = useState("");
@@ -233,7 +241,7 @@ export function LlmTestChat({
     totalTokens: 0,
     exact: false
   });
-  const [selectedSystemPromptId, setSelectedSystemPromptId] = useState("none");
+  const [selectedSystemPromptId, setSelectedSystemPromptId] = useState(defaultSystemPromptId);
   const [renderMode, setRenderMode] = useState<"preview" | "raw">("preview");
   const [showSelectedSystemPrompt, setShowSelectedSystemPrompt] = useState(false);
   const [streamPhase, setStreamPhase] = useState<"idle" | "connecting" | "thinking" | "answering">(
@@ -329,6 +337,11 @@ export function LlmTestChat({
         })),
     [messages]
   );
+
+  useEffect(() => {
+    setSelectedSystemPromptId(defaultSystemPromptId);
+    setShowSelectedSystemPrompt(defaultSystemPromptId !== "none");
+  }, [defaultSystemPromptId]);
 
   useEffect(() => {
     console.info("[llm-test] runtime", {
@@ -894,7 +907,11 @@ export function LlmTestChat({
         </Pill>
       </div>
 
-      <section className="grid items-start gap-6 xl:grid-cols-[minmax(300px,0.74fr)_minmax(0,1.26fr)]">
+      <section className={cn(
+        "grid items-start gap-6",
+        lockSystemPrompt ? "xl:grid-cols-1" : "xl:grid-cols-[minmax(300px,0.74fr)_minmax(0,1.26fr)]"
+      )}>
+        {!lockSystemPrompt ? (
         <Card className="space-y-6 self-start xl:sticky xl:top-8" tone="glass">
           <div className="space-y-3">
             <p className="editorial-kicker">System Prompt</p>
@@ -1045,6 +1062,7 @@ export function LlmTestChat({
             </div>
           </div>
         </Card>
+        ) : null}
 
         <Card
           className="relative flex min-h-[720px] flex-col overflow-hidden xl:sticky xl:top-8 xl:h-[calc(100dvh-8rem)]"
@@ -1052,9 +1070,9 @@ export function LlmTestChat({
         >
           <div className="flex items-center justify-between gap-4 border-b border-outline-variant/20 pb-5">
             <div>
-              <p className="editorial-kicker">Conversation</p>
+              <p className="editorial-kicker">{conversationSubtitle}</p>
               <p className="mt-2 text-lg font-extrabold tracking-[-0.03em] text-on-surface">
-                MiniMax Test Chat
+                {conversationTitle}
               </p>
             </div>
             <button

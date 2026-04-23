@@ -10,10 +10,11 @@ const CATEGORY_ORDER: Record<string, number> = {
   agents: 2,
   "training/grammar": 3,
   "training/skills": 4,
-  "testdaf/lesen": 5,
-  "testdaf/hoeren": 6,
-  "testdaf/schreiben": 7,
-  "testdaf/sprechen": 8,
+  "training/chat": 5,
+  "testdaf/lesen": 6,
+  "testdaf/hoeren": 7,
+  "testdaf/schreiben": 8,
+  "testdaf/sprechen": 9,
   ".": 98,
   other: 99
 };
@@ -23,6 +24,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   agents: "Agents",
   "training/grammar": "Training · Grammar",
   "training/skills": "Training · Skills",
+  "training/chat": "Training · Chat Exercises",
   "testdaf/lesen": "TestDaF · Lesen",
   "testdaf/hoeren": "TestDaF · Hoeren",
   "testdaf/schreiben": "TestDaF · Schreiben",
