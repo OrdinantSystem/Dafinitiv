@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#91f4e6",
+              "tertiary-fixed": "#dae2fd",
+              "surface": "#fbf9f1",
+              "secondary-container": "#91f4e6",
+              "primary-container": "#00685f",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#bec6e0",
+              "surface-bright": "#fbf9f1",
+              "outline": "#6e7977",
+              "on-tertiary-container": "#cdd5ef",
+              "on-secondary-container": "#007167",
+              "surface-variant": "#e4e3db",
+              "error": "#ba1a1a",
+              "background": "#fbf9f1",
+              "surface-tint": "#066a61",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "tertiary": "#3d445a",
+              "surface-container-low": "#f6f4ec",
+              "secondary-fixed-dim": "#74d7ca",
+              "inverse-primary": "#85d5c9",
+              "surface-container-high": "#eae8e0",
+              "on-primary": "#ffffff",
+              "on-surface": "#1b1c17",
+              "on-secondary-fixed-variant": "#005049",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f3f1e9",
+              "primary-fixed": "#a1f1e5",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#004e47",
+              "on-background": "#1b1c17",
+              "inverse-surface": "#30312c",
+              "on-primary-fixed": "#00201d",
+              "surface-container-highest": "#e4e3db",
+              "on-tertiary-fixed": "#131b2e",
+              "tertiary-container": "#545c72",
+              "on-primary-fixed-variant": "#005049",
+              "surface-dim": "#dcdad2",
+              "on-secondary-fixed": "#00201d",
+              "outline-variant": "#bec9c6",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#93e4d8",
+              "secondary": "#006a61",
+              "surface-container": "#f0eee6",
+              "on-surface-variant": "#3e4947",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#85d5c9"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #bec9c6; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Top Navigation -->
+<header class="fixed top-0 z-50 w-full bg-[#fbf9f1] dark:bg-slate-950 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#0f172a] dark:text-slate-100">DaF Focus</span>
+<nav class="hidden md:flex items-center gap-6 font-['Plus_Jakarta_Sans'] text-sm tracking-tight">
+<a class="text-[#3e4947] dark:text-slate-400 hover:bg-[#f0eee6] transition-colors px-3 py-1.5 rounded-full scale-95 duration-200" href="#">Dashboard</a>
+<a class="text-[#00685f] font-semibold hover:bg-[#f0eee6] transition-colors px-3 py-1.5 rounded-full scale-95 duration-200" href="#">Mock Exams</a>
+<a class="text-[#3e4947] dark:text-slate-400 hover:bg-[#f0eee6] transition-colors px-3 py-1.5 rounded-full scale-95 duration-200" href="#">Study Plan</a>
+<a class="text-[#3e4947] dark:text-slate-400 hover:bg-[#f0eee6] transition-colors px-3 py-1.5 rounded-full scale-95 duration-200" href="#">Vocabulary</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-[#f0eee6] p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-[#f0eee6] p-2 rounded-full transition-colors">settings</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Academic profile of the student" data-alt="close-up portrait of a young male student looking confident and scholarly with glasses and a soft smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-qYpPKZD0yLWGoqiSPq4l8R2j74ikwM144EzkrfUZqAoOt6D0dofigvmfsHkpV7BDoaMlzcX-JsZxlAFmQjdBp9CLks6veNjqjMg4H31ZjFYWWQ8J39e1DPMOHp8d1e20q5brN2gUXVHwyo8tnEpbwa6Ne7T9N2XAujmDildNIS-Qxf6Boo7UgPPNh4PIxPg04sWGkoKdguu5oRKAvv72rrklnm3sJmHVjwJqPRzJwOPZ_13ZONE4caWXIfxuLDzh7l0KL_xy9s0"/>
+</div>
+</div>
+</header>
+<!-- Sidebar (Desktop) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#f0eee6] dark:bg-slate-900 hidden lg:flex flex-col py-8 px-4 z-40">
+<div class="mb-12 px-4">
+<h2 class="text-lg font-extrabold text-[#0f172a] mb-1">Study Sanctuary</h2>
+<p class="text-[0.75rem] uppercase tracking-widest font-medium text-[#3e4947]">DaF Prep Premium</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#3e4947] hover:bg-[#e4e3db] transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#00685f] font-bold border-r-4 border-[#00685f] bg-[#e4e3db] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-medium">Mock Exams</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#3e4947] hover:bg-[#e4e3db] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-medium">Study Plan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#3e4947] hover:bg-[#e4e3db] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-medium">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#3e4947] hover:bg-[#e4e3db] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-medium">Performance</span>
+</a>
+</nav>
+<div class="mt-auto space-y-6">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-4 px-6 rounded-full font-bold shadow-sm hover:scale-[0.98] transition-transform">
+                Start Practice
+            </button>
+<div class="space-y-1 border-t border-outline-variant/20 pt-6">
+<a class="flex items-center gap-3 px-4 py-2 text-[#3e4947] hover:bg-[#e4e3db] rounded-lg text-sm" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#3e4947] hover:bg-[#e4e3db] rounded-lg text-sm" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="lg:ml-64 pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<span class="text-xs uppercase tracking-[0.2em] font-bold text-secondary">Mock Exam #04 • Completed</span>
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface">TDN 4 Achieved.</h1>
+<p class="text-lg text-on-surface-variant max-w-lg leading-relaxed">Your results show significant progress in Reading. Now, let's focus on bridging the final gap to TDN 5 before your official TestDaF.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl">
+<div class="text-center px-4">
+<span class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest">Global Rank</span>
+<span class="text-3xl font-black text-primary">Top 8%</span>
+</div>
+<div class="w-px h-10 bg-outline-variant/30"></div>
+<div class="text-center px-4">
+<span class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest">Accuracy</span>
+<span class="text-3xl font-black text-primary">84%</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Bento Grid: Bridge the Gap -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+<!-- Target Visualizer Card -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-2xl font-bold tracking-tight mb-8">Bridge the Gap: Path to TDN 5</h3>
+<div class="relative py-12">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-container -translate-y-1/2 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[75%]"></div>
+</div>
+<!-- Markers -->
+<div class="relative flex justify-between">
+<div class="flex flex-col items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-lg shadow-primary/20">4</div>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant">Current Level</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container border-2 border-primary-fixed text-primary flex items-center justify-center font-bold">4.5</div>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant">The Threshold</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-outline flex items-center justify-center font-bold">5</div>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant">Target TDN</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-8 border-t border-surface-container">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">trending_up</span>
+<h4 class="font-bold text-sm uppercase tracking-wider">Required Gains</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center bg-surface-container-low px-4 py-3 rounded-lg">
+<span class="text-sm font-medium">Syntactic Complexity</span>
+<span class="text-xs font-bold text-primary">+12% Needed</span>
+</li>
+<li class="flex justify-between items-center bg-surface-container-low px-4 py-3 rounded-lg">
+<span class="text-sm font-medium">Lexical Variation</span>
+<span class="text-xs font-bold text-primary">+18% Needed</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+<h4 class="font-bold text-sm uppercase tracking-wider">AI Insight</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Your "Schriftlicher Ausdruck" is sophisticated but relies on generic connectors. To hit TDN 5, replace <i>"Darüber hinaus"</i> with more varied academic transitions like <i>"Dessen ungeachtet"</i>.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Score Summary Card -->
+<div class="bg-surface-container p-8 rounded-xl space-y-8">
+<h3 class="text-xl font-bold tracking-tight">Sectional Snapshot</h3>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1">
+<span>Leseverstehen</span>
+<span class="text-primary">TDN 5</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1">
+<span>Hörverstehen</span>
+<span class="text-primary">TDN 4</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 w-[74%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1">
+<span>Schriftlicher Ausdruck</span>
+<span class="text-primary">TDN 4</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 w-[68%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1">
+<span>Mündlicher Ausdruck</span>
+<span class="text-primary">TDN 3</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error/40 w-[45%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full text-sm font-bold text-primary flex items-center justify-center gap-2 hover:translate-x-1 transition-transform">
+                        View Detailed Skill Breakdown
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Recommended Roadmap -->
+<section class="mb-16">
+<h2 class="text-3xl font-extrabold tracking-tight mb-8">Prioritized Roadmap • Week 05</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Task 01 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-lowest p-6 rounded-xl transition-all duration-300">
+<div class="flex items-start justify-between mb-8">
+<div class="bg-primary/10 text-primary w-10 h-10 flex items-center justify-center rounded-lg font-black">01</div>
+<span class="bg-secondary-container text-on-secondary-container text-[0.65rem] font-bold px-2 py-1 rounded">HIGH PRIORITY</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Syntax Refinement</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Master the usage of "Nominalisierung" in your essay introductions to mirror C1 academic style.</p>
+<div class="flex items-center gap-2 text-xs font-bold text-on-surface-variant bg-surface-container p-3 rounded-lg">
+<span class="material-symbols-outlined text-base">timer</span>
+                        45m Practice Session
+                    </div>
+</div>
+<!-- Task 02 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-lowest p-6 rounded-xl transition-all duration-300">
+<div class="flex items-start justify-between mb-8">
+<div class="bg-primary/10 text-primary w-10 h-10 flex items-center justify-center rounded-lg font-black">02</div>
+<span class="bg-surface-container-highest text-on-surface-variant text-[0.65rem] font-bold px-2 py-1 rounded">SKILL DRILL</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Listening Vol. 3 Focus</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Complete 3 targeted drills focusing on scientific lectures from the University of Munich archive.</p>
+<div class="flex items-center gap-2 text-xs font-bold text-on-surface-variant bg-surface-container p-3 rounded-lg">
+<span class="material-symbols-outlined text-base">headphones</span>
+                        Module 08: Academic Audio
+                    </div>
+</div>
+<!-- Task 03 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-lowest p-6 rounded-xl transition-all duration-300">
+<div class="flex items-start justify-between mb-8">
+<div class="bg-primary/10 text-primary w-10 h-10 flex items-center justify-center rounded-lg font-black">03</div>
+<span class="bg-surface-container-highest text-on-surface-variant text-[0.65rem] font-bold px-2 py-1 rounded">REVISION</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Argumentation Flow</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Rewrite your last Mock Essay intro focusing on varied causal connectors and proper subjunctive II.</p>
+<div class="flex items-center gap-2 text-xs font-bold text-on-surface-variant bg-surface-container p-3 rounded-lg">
+<span class="material-symbols-outlined text-base">edit_note</span>
+                        Writing Clinic • Video Review
+                    </div>
+</div>
+</div>
+</section>
+<!-- Final CTA / Support Nudge -->
+<section class="bg-tertiary-fixed/30 backdrop-blur-xl rounded-xl p-10 relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="space-y-4 max-w-xl text-center md:text-left">
+<h2 class="text-3xl font-black tracking-tighter text-on-tertiary-fixed">Ready to leap to TDN 5?</h2>
+<p class="text-on-tertiary-fixed-variant leading-relaxed">Schedule a 15-minute diagnostic call with a certified TestDaF examiner to review your "Bridge the Gap" analysis personally.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary py-4 px-10 rounded-full font-bold shadow-lg hover:shadow-primary/30 transition-all">Book Coaching</button>
+<button class="bg-surface-container-highest text-on-surface py-4 px-10 rounded-full font-bold hover:bg-surface-container-lowest transition-all">Next Mock Exam</button>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+</section>
+</main>
+<!-- Mobile Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-surface-container h-16 flex md:hidden items-center justify-around z-50 border-t-0 shadow-2xl">
+<button class="flex flex-col items-center gap-1 text-[#3e4947]">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[0.65rem] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#00685f]">
+<span class="material-symbols-outlined">assignment</span>
+<span class="text-[0.65rem] font-bold">Exams</span>
+</button>
+<div class="relative -top-4">
+<button class="bg-primary text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-[#3e4947]">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[0.65rem] font-bold">Stats</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#3e4947]">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[0.65rem] font-bold">Profile</span>
+</button>
+</nav>
+</body></html>

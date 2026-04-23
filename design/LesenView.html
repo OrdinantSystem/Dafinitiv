@@ -1,0 +1,370 @@
+<!DOCTYPE html><html class="light" lang="en" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Lesen Hub | The Adaptive Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e4e3db",
+                "surface-container-lowest": "#ffffff",
+                "on-error": "#ffffff",
+                "primary": "#004e47",
+                "surface-container-high": "#eae8e0",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#545c72",
+                "surface-variant": "#e4e3db",
+                "on-tertiary-container": "#cdd5ef",
+                "surface": "#fbf9f1",
+                "primary-container": "#00685f",
+                "primary-fixed": "#a1f1e5",
+                "on-primary": "#ffffff",
+                "inverse-surface": "#30312c",
+                "secondary": "#006a61",
+                "on-secondary": "#ffffff",
+                "background": "#fbf9f1",
+                "on-surface-variant": "#3e4947",
+                "tertiary": "#3d445a",
+                "tertiary-fixed": "#dae2fd",
+                "inverse-primary": "#85d5c9",
+                "primary-fixed-dim": "#85d5c9",
+                "on-primary-fixed-variant": "#005049",
+                "on-secondary-fixed": "#00201d",
+                "secondary-fixed-dim": "#74d7ca",
+                "on-background": "#1b1c17",
+                "surface-tint": "#066a61",
+                "on-secondary-container": "#007167",
+                "on-primary-container": "#93e4d8",
+                "error": "#ba1a1a",
+                "surface-container-low": "#f6f4ec",
+                "surface-container": "#f0eee6",
+                "tertiary-fixed-dim": "#bec6e0",
+                "on-tertiary-fixed": "#131b2e",
+                "on-secondary-fixed-variant": "#005049",
+                "on-primary-fixed": "#00201d",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-fixed-variant": "#3f465c",
+                "secondary-fixed": "#91f4e6",
+                "surface-bright": "#fbf9f1",
+                "outline-variant": "#bec9c6",
+                "inverse-on-surface": "#f3f1e9",
+                "outline": "#6e7977",
+                "secondary-container": "#91f4e6",
+                "on-surface": "#1b1c17",
+                "surface-dim": "#dcdad2"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex fixed left-0 top-0 h-screen w-64 bg-surface-container flex-col py-8 gap-2 z-50 rounded-r-[3rem]">
+<div class="px-8 mb-8">
+<h1 class="text-lg font-black text-on-surface tracking-tighter" style="">The Adaptive Studio</h1>
+<p class="text-[0.75rem] uppercase tracking-widest font-medium text-on-surface-variant" style="">Mastery Hub</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" style="">dashboard</span>
+<span class="text-[0.75rem] uppercase tracking-widest font-medium" style="">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-primary bg-surface-container-lowest rounded-full mx-2 font-bold translate-x-1 transition-transform duration-300" href="#" style="">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">menu_book</span>
+<span class="text-[0.75rem] uppercase tracking-widest font-medium" style="">Reading</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" style="">assignment</span>
+<span class="text-[0.75rem] uppercase tracking-widest font-medium" style="">Mock Exams</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" style="">insights</span>
+<span class="text-[0.75rem] uppercase tracking-widest font-medium" style="">Performance</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full py-4 px-6 bg-primary text-on-primary rounded-full font-bold text-sm tracking-tight flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-95" style="">
+<span class="" style="">Start Practice</span>
+<span class="material-symbols-outlined text-sm" style="">arrow_forward</span>
+</button>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" style="">help_outline</span>
+<span class="text-[0.75rem] uppercase tracking-widest font-medium" style="">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" style="">logout</span>
+<span class="text-[0.75rem] uppercase tracking-widest font-medium" style="">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold tracking-tighter text-on-surface" style="">Lesen Hub<br></span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary-container"></span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" style="">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary-container w-64 transition-all" placeholder="Search strategies..." type="text">
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" style="">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" style="">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden bg-surface-container-high border-2 border-surface">
+<img alt="User profile avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEJfPDYrtXRut90rKrUNlNnfUEO7J6d2dZnn_JbR-me7re_MtScb0IkmGcSKebNnHLyStkKN9OloFsbczZjq5a_l8VGA40BIWeO1dtdM4kmGeNPyGfM8qEVJtYLqI8J82x1JRbmfVDcBKnnqYRsQQ_ZvwjsgjKWlr8PfGvDN-NlokDS1gXf0DU8wMw6SJQr5VXaXvGp-xgELtn3DMvxUbQp1KEhonQnupH5e23x7R-FfBFxpFJ9v92KFdjBuQ-RiRL29EZdeFav8o" style="">
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="px-12 pb-20 max-w-screen-2xl mx-auto">
+<!-- Page Header -->
+<section class="mt-8 mb-12">
+<h1 class="text-6xl font-extrabold tracking-tighter mb-4 text-on-surface" style="">Lesen Hub</h1>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-primary-container/10 text-primary-container text-xs font-bold uppercase tracking-widest rounded-full" style="">B2/C1 Niveau</span>
+<span class="h-1 w-1 rounded-full bg-outline-variant"></span>
+<p class="text-on-surface-variant text-sm font-medium" style="">Adaptive reading strategies and analysis based on recent activity.</p>
+</div>
+</section>
+<!-- 1. Stats Row (Matches IMAGE_24) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<!-- LESEN ACCURACY -->
+<div class="bg-surface-container-lowest p-8 rounded-[2.5rem] flex flex-col gap-4 shadow-sm border border-surface-container">
+<div class="flex justify-between items-start">
+<p class="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-on-surface-variant" style="">Lesen Accuracy</p>
+<span class="material-symbols-outlined text-primary text-xl" style="">insights</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tighter" style="">84</span>
+<span class="text-xl font-bold text-primary" style="">%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 84%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 font-medium" style="">Current percentile: <span class="text-on-surface font-bold" style="">Top 8%</span></p>
+</div>
+<!-- READING PACING -->
+<div class="bg-surface-container-lowest p-8 rounded-[2.5rem] flex flex-col gap-4 shadow-sm border border-surface-container">
+<div class="flex justify-between items-start">
+<p class="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-on-surface-variant" style="">Reading Pacing</p>
+<span class="material-symbols-outlined text-secondary text-xl" style="">speed</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tighter" style="">2.4</span>
+<span class="text-sm font-bold text-on-surface-variant ml-1" style="">min/task</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex gap-1">
+<div class="bg-primary h-full rounded-full w-1/3"></div>
+<div class="bg-primary h-full rounded-full w-1/3"></div>
+<div class="bg-surface-container-highest h-full rounded-full w-1/3"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 font-medium italic" style="">Semantic accuracy in scan-reading.</p>
+</div>
+<!-- STRATEGY MASTERY -->
+<div class="bg-surface-container-lowest p-8 rounded-[2.5rem] flex flex-col gap-4 shadow-sm border border-surface-container">
+<p class="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-on-surface-variant" style="">Strategy Mastery</p>
+<div class="flex flex-col gap-4 mt-2">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold" style="">Skimming</span>
+<span class="px-2 py-0.5 bg-primary-container/10 text-primary-container text-[0.65rem] font-black uppercase rounded-sm" style="">High</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold" style="">Scanning</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[0.65rem] font-black uppercase rounded-sm" style="">Medium</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold" style="">Keyword Matching</span>
+<span class="px-2 py-0.5 bg-error-container text-error text-[0.65rem] font-black uppercase rounded-sm" style="">Low</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Recommended Focus (Bento Style) -->
+<section class="mb-16">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-bold tracking-tight" style="">Recommended Focus</h3>
+<a class="text-xs font-bold uppercase tracking-widest text-primary hover:underline" href="#" style="">View Roadmap</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Academic Vocabulary Drill -->
+<div class="group bg-primary text-on-primary p-10 rounded-[2.5rem] relative overflow-hidden transition-transform active:scale-[0.98]">
+<div class="relative z-10">
+<div class="flex gap-2 mb-6">
+<span class="bg-on-primary/20 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest" style="">12 min</span>
+<span class="bg-on-primary/20 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest" style="">B2/C1</span>
+</div>
+<h4 class="text-3xl font-extrabold tracking-tighter mb-4 leading-tight" style="">Academic Vocabulary Drill</h4>
+<p class="text-on-primary/80 text-sm max-w-xs mb-8" style="">Master the recognition of scholarly transition words and connectives in complex texts.</p>
+<button class="bg-on-primary text-primary px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" style="">
+                            Launch Module
+                            <span class="material-symbols-outlined text-sm" style="">play_arrow</span>
+</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[12rem]" style="">translate</span>
+</div>
+</div>
+<!-- Detailed Analysis Strategy -->
+<div class="group bg-surface-container-high p-10 rounded-[2.5rem] relative overflow-hidden transition-transform active:scale-[0.98]">
+<div class="relative z-10">
+<div class="flex gap-2 mb-6">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant" style="">25 min</span>
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant" style="">Level C1</span>
+</div>
+<h4 class="text-3xl font-extrabold tracking-tighter mb-4 leading-tight" style="">Detailed Analysis Strategy</h4>
+<p class="text-on-surface-variant text-sm max-w-xs mb-8" style="">Learn to identify subtle nuances and author bias in complex argumentative structures.</p>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all shadow-lg" style="">
+                            Launch Module
+                            <span class="material-symbols-outlined text-sm" style="">play_arrow</span>
+</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5">
+<span class="material-symbols-outlined text-[12rem]" style="">psychology</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Task Typologies (2x4 Grid matching IMAGE_26) -->
+<section class="mb-20">
+<div class="mb-10">
+<h3 class="text-2xl font-bold tracking-tight mb-2" style="">Task Typologies</h3>
+<p class="text-on-surface-variant text-sm" style="">Deep practice for TestDaF reading standard formats.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-outline-variant/20 overflow-hidden rounded-[2.5rem] border border-outline-variant/20">
+<!-- 01 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">01</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">public</span>
+</div>
+<div class="flex-grow"><h5 class="text-lg font-bold tracking-tight mb-3" style="">Short Texts</h5><p class="text-sm text-on-surface-variant leading-relaxed" style="">Matching academic news and bulletin summaries with user interests.</p></div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- 02 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">02</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">filter_center_focus</span>
+</div>
+<div class="flex-grow"><h5 class="text-lg font-bold tracking-tight mb-3" style="">Scientific Texts</h5><p class="text-sm text-on-surface-variant leading-relaxed" style="">Analysis of complex journals. Multiple choice comprehension.</p></div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- 03 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">03</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">search_check</span>
+</div>
+<div class="flex-grow"><h5 class="text-lg font-bold tracking-tight mb-3" style="">Author Intent</h5><p class="text-sm text-on-surface-variant leading-relaxed" style="">Identifying underlying tone and persuasive strategies.</p></div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- 04 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">04</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">description</span>
+</div>
+<div class="flex-grow"><h5 class="text-lg font-bold tracking-tight mb-3" style="">Column Matching</h5><p class="text-sm text-on-surface-variant leading-relaxed" style="">Relating complex statements to diverse expert opinions.</p></div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- 05 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">05</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">psychology</span>
+</div>
+<div class="flex-grow"><h5 class="text-lg font-bold tracking-tight mb-3" style="">Grammar in Context</h5><p class="text-sm text-on-surface-variant leading-relaxed" style="">Cloze tests focusing on scientific syntax and connectors.</p></div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- 06 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">06</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">account_tree</span>
+</div>
+<div class="flex-grow"><h5 class="text-lg font-bold tracking-tight mb-3" style="">Data Synthesis</h5><p class="text-sm text-on-surface-variant leading-relaxed" style="">Reading charts and graphs alongside text for unified meaning.</p></div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- 07 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] sm:col-span-1 group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">07</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">report_problem</span>
+</div>
+<div class="flex-grow"><h5 class="text-lg font-bold tracking-tight mb-3" style="">Opinion Contrast</h5><p class="text-sm text-on-surface-variant leading-relaxed" style="">Distinguishing subtle differences between two related viewpoints.</p></div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- Upcoming Empty State -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] items-center justify-center border-l border-outline-variant/20">
+<span class="material-symbols-outlined text-outline-variant/40 text-4xl mb-4" style="">more_horiz</span>
+<span class="text-[0.65rem] font-bold text-on-surface-variant/40 tracking-[0.2em] uppercase" style="">Coming Soon</span>
+</div>
+</div>
+</section>
+<!-- 4. Footer CTA (Matches IMAGE_25) -->
+<section class="flex flex-col md:flex-row gap-8 items-center justify-between p-12 bg-surface-container-low rounded-[2.5rem] mb-12">
+<div class="max-w-md">
+<h3 class="text-4xl font-extrabold tracking-tighter mb-4 text-on-surface" style="">Ready for a challenge?</h3>
+<p class="text-on-surface-variant font-medium text-lg" style="">Test your limits with a full-length simulated exam or focus on specific skills in practice mode.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0">
+<button class="px-10 py-5 bg-surface-container-highest text-on-surface rounded-full font-bold text-sm uppercase tracking-widest hover:bg-surface-variant transition-all text-center" style="">
+                    PRACTICE MODE
+                </button>
+<button class="px-10 py-5 bg-primary text-on-primary rounded-full font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all shadow-xl shadow-primary/20 text-center" style="">
+                    LAUNCH FULL SIMULATION
+                </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Mobile Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-lg px-6 py-4 flex justify-around items-center z-50 rounded-t-3xl shadow-2xl">
+<a class="flex flex-col items-center text-on-surface-variant" href="#" style="">
+<span class="material-symbols-outlined" style="">dashboard</span>
+<span class="text-[0.65rem] font-bold mt-1" style="">Dashboard</span>
+</a>
+<a class="flex flex-col items-center text-primary" href="#" style="">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">menu_book</span>
+<span class="text-[0.65rem] font-bold mt-1" style="">Practice</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#" style="">
+<span class="material-symbols-outlined" style="">assignment</span>
+<span class="text-[0.65rem] font-bold mt-1" style="">Exams</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#" style="">
+<span class="material-symbols-outlined" style="">insights</span>
+<span class="text-[0.65rem] font-bold mt-1" style="">Stats</span>
+</a>
+</nav>
+</body></html>

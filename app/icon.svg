@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="dafinitvGradient" x1="8" x2="56" y1="8" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00584f" />
+      <stop offset="1" stop-color="#0a6f63" />
+    </linearGradient>
+    <radialGradient id="dafinitvGlow" cx="0" cy="0" r="1" gradientTransform="translate(18 16) rotate(45) scale(28)">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#dafinitvGradient)" />
+  <rect width="62" height="62" x="1" y="1" rx="17" fill="url(#dafinitvGlow)" />
+  <path d="M20 16v32" fill="none" stroke="#fffaf1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5" />
+  <path
+    d="M20 16h10.5c9.15 0 15.5 6.4 15.5 16s-6.35 16-15.5 16H20"
+    fill="none"
+    stroke="#fffaf1"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="4.5"
+  />
+  <path
+    d="m31.5 24 9.25 8-9.25 8"
+    fill="none"
+    stroke="#dffff9"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="4.5"
+  />
+  <circle cx="46.5" cy="18.5" r="2.2" fill="#f8fffc" />
+</svg>

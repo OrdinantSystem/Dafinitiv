@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="de" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TestDaF Academy - Sprechen Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f1;
+            color: #1b1c17;
+            margin: 0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "secondary": "#006a61",
+                "on-background": "#1b1c17",
+                "on-error": "#ffffff",
+                "on-secondary-fixed": "#00201d",
+                "tertiary": "#3d445a",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed-variant": "#005049",
+                "surface-container-low": "#f6f4ec",
+                "secondary-fixed-dim": "#74d7ca",
+                "on-error-container": "#93000a",
+                "error": "#ba1a1a",
+                "primary": "#004e47",
+                "on-tertiary-container": "#cdd5ef",
+                "surface": "#fbf9f1",
+                "inverse-on-surface": "#f3f1e9",
+                "on-tertiary-fixed-variant": "#3f465c",
+                "tertiary-container": "#545c72",
+                "inverse-surface": "#30312c",
+                "tertiary-fixed-dim": "#bec6e0",
+                "on-primary": "#ffffff",
+                "surface-tint": "#066a61",
+                "on-surface": "#1b1c17",
+                "outline-variant": "#bec9c6",
+                "tertiary-fixed": "#dae2fd",
+                "on-surface-variant": "#3e4947",
+                "surface-container-high": "#eae8e0",
+                "primary-container": "#00685f",
+                "on-tertiary-fixed": "#131b2e",
+                "secondary-fixed": "#91f4e6",
+                "inverse-primary": "#85d5c9",
+                "surface-dim": "#dcdad2",
+                "surface-variant": "#e4e3db",
+                "secondary-container": "#91f4e6",
+                "surface-container": "#f0eee6",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e4e3db",
+                "surface-bright": "#fbf9f1",
+                "outline": "#6e7977",
+                "on-secondary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed-variant": "#005049",
+                "on-secondary-container": "#007167",
+                "primary-fixed-dim": "#85d5c9",
+                "on-primary-container": "#93e4d8",
+                "primary-fixed": "#a1f1e5",
+                "on-primary-fixed": "#00201d",
+                "background": "#fbf9f1"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 rounded-r-[3rem] bg-surface-container flex flex-col py-8 gap-2 z-50">
+<div class="px-8 mb-8">
+<h1 class="text-lg font-black text-[#0f172a] tracking-tighter" style="">&nbsp;TestDaF Academy</h1>
+<p class="font-['Plus_Jakarta_Sans'] text-[0.75rem] uppercase tracking-widest font-medium text-on-surface-variant" style="">German B2/C1</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-4 text-[#3e4947] hover:text-[#1b1c17] hover:bg-[#e4e3db] rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" data-icon="menu_book" style="">menu_book</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] uppercase tracking-widest font-medium" style="">Study Hub</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-[#3e4947] hover:text-[#1b1c17] hover:bg-[#e4e3db] rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in" style="">assignment_turned_in</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] uppercase tracking-widest font-medium" style="">Practice Tests</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-[#3e4947] hover:text-[#1b1c17] hover:bg-[#e4e3db] rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" data-icon="insights" style="">insights</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] uppercase tracking-widest font-medium" style="">Progress</span>
+</a>
+<!-- Active State: Speaking -->
+<a class="flex items-center gap-3 px-6 py-4 text-[#00685f] bg-surface-container-lowest rounded-full mx-2 font-bold translate-x-1 transition-transform duration-300" href="#" style="">
+<span class="material-symbols-outlined" data-icon="record_voice_over" style="font-variation-settings: &quot;FILL&quot; 1;">record_voice_over</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] uppercase tracking-widest font-medium" style="">Speaking</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full py-4 px-6 bg-primary text-on-primary rounded-full font-bold text-sm tracking-tight flex items-center justify-center gap-2 shadow-sm" style="">
+<span class="" style="">Start Practice</span>
+<span class="material-symbols-outlined text-sm" style="">arrow_forward</span>
+</button>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-3 text-[#3e4947] hover:bg-[#e4e3db] rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] uppercase tracking-widest font-medium" style="">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#3e4947] hover:bg-[#e4e3db] rounded-full mx-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" data-icon="help_outline" style="">help_outline</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[0.75rem] uppercase tracking-widest font-medium" style="">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold tracking-tighter text-[#1b1c17]" style="">Sprechen Hub</span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary-container"></span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" style="">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary-container w-64 transition-all" placeholder="Search resources..." type="text">
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" style="">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" style="">dark_mode</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden bg-surface-container-high ml-2 border-2 border-surface">
+<img alt="User profile avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpljgeeoOQ5vIlytHjz6bKJ_nCh1VwYWVOkSkHbiYaR_vN7FBIQ20t-UKLLUuoeQ-xuwXopbYT31HE2gZB6b12cXYotkHQKb586-2qfU5S4m77e29vH0IDi9Iaz7Lh4b4tzbbYRY45UanQftVJP2hWSn3Mb4PDpGoAKGPtXAhL9d7Jahow0BHkvUM4s9J2FuGpszKIp9b1uhyuOYDDyFPcR8nTeri9YEJhaHGfiMkoh9QxUuO-_9uTA5oMM2H1SmiVl5tUH9X4Bl0" style="">
+</div>
+</div>
+</div>
+</header>
+<div class="px-12 pb-20 max-w-screen-2xl mx-auto">
+<!-- Page Header Section -->
+<section class="mt-8 mb-12">
+<h2 class="text-6xl font-extrabold tracking-tighter mb-4 text-on-surface" style="">Sprechen Hub</h2>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-primary-container/10 text-primary-container text-xs font-bold uppercase tracking-widest rounded-full" style="">C1 Advanced</span>
+<span class="h-1 w-1 rounded-full bg-outline-variant"></span>
+<p class="text-on-surface-variant text-sm font-medium" style="">Daily adaptive insights based on your speaking performance.</p>
+</div>
+</section>
+<!-- 1. Metrics Row (Structurally identical to SCREEN_67) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<p class="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-on-surface-variant" style="">Sprechfertigkeit</p>
+<span class="material-symbols-outlined text-primary text-xl" style="">insights</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tighter" style="">84</span>
+<span class="text-xl font-bold text-primary" style="">%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 84%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 font-medium" style="">Current percentile: <span class="text-on-surface font-bold" style="">Top 8%</span></p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<p class="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-on-surface-variant" style="">Argumentation</p>
+<span class="material-symbols-outlined text-secondary text-xl" style="">account_tree</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tighter" style="">72</span>
+<span class="text-xl font-bold text-secondary" style="">%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 72%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 font-medium" style="">Logical structure &amp; connectors.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col gap-4">
+<p class="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-on-surface-variant" style="">Fehlermuster</p>
+<div class="flex flex-col gap-4 mt-2">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold" style="">Lexical Overload</span>
+<span class="px-2 py-0.5 bg-error-container text-error text-[0.65rem] font-black uppercase rounded-sm" style="">High</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold" style="">Phonetic Interference</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[0.65rem] font-black uppercase rounded-sm" style="">Medium</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold" style="">Prosody Errors</span>
+<span class="px-2 py-0.5 bg-primary-container/10 text-primary-container text-[0.65rem] font-black uppercase rounded-sm" style="">Low</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Recommended Focus (Bento Style from SCREEN_67) -->
+<section class="mb-16">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-bold tracking-tight" style="">Empfohlener Fokus</h3>
+<a class="text-xs font-bold uppercase tracking-widest text-primary hover:underline" href="#" style="">View Roadmap</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Recommended Card 1 -->
+<div class="group bg-primary text-on-primary p-10 rounded-xl relative overflow-hidden transition-transform active:scale-[0.98]">
+<div class="relative z-10">
+<div class="flex gap-2 mb-6">
+<span class="bg-on-primary/20 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest" style="">15 min</span>
+<span class="bg-on-primary/20 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest" style="">Task 03</span>
+</div>
+<h4 class="text-3xl font-extrabold tracking-tighter mb-4 leading-tight" style="">Graphic Description Strategy</h4>
+<p class="text-on-primary/80 text-sm max-w-xs mb-8" style="">Learn to verbalize complex statistical trends and causal relationships with academic precision.</p>
+<button class="bg-on-primary text-primary px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" style="">
+                            Übung Starten
+                            <span class="material-symbols-outlined text-sm" style="">play_arrow</span>
+</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[12rem]" style="">bar_chart</span>
+</div>
+</div>
+<!-- Recommended Card 2 -->
+<div class="group bg-surface-container-high p-10 rounded-xl relative overflow-hidden transition-transform active:scale-[0.98]">
+<div class="relative z-10">
+<div class="flex gap-2 mb-6">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant" style="">20 min</span>
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant" style="">Grammar Focus</span>
+</div>
+<h4 class="text-3xl font-extrabold tracking-tighter mb-4 leading-tight" style="">Hypothesis Formation</h4>
+<p class="text-on-surface-variant text-sm max-w-xs mb-8" style="">Mastering conditional structures (Konjunktiv II) for advanced academic argumentation.</p>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all shadow-lg" style="">
+                            Launch Module
+                            <span class="material-symbols-outlined text-sm" style="">play_arrow</span>
+</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5">
+<span class="material-symbols-outlined text-[12rem]" style="">psychology</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Task Typologies Grid (2x4 Grid from SCREEN_67) -->
+<section class="mb-20">
+<div class="mb-10">
+<h3 class="text-2xl font-bold tracking-tight mb-2" style="">Aufgabentypen</h3>
+<p class="text-on-surface-variant text-sm" style="">Deep practice for TestDaF standard formats.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-outline-variant/20 overflow-hidden rounded-xl border border-outline-variant/20">
+<!-- Task 01 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">01</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">info</span>
+</div>
+<div class="flex-grow">
+<h5 class="text-lg font-bold tracking-tight mb-3" style="">Informationseinholung</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Clarify organizational details in a campus scenario with academic politeness.</p>
+</div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- Task 02 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">02</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">chat</span>
+</div>
+<div class="flex-grow">
+<h5 class="text-lg font-bold tracking-tight mb-3" style="">Bericht erstatten</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Narrate events or describe specific social/cultural situations clearly.</p>
+</div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- Task 03 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">03</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">legend_toggle</span>
+</div>
+<div class="flex-grow">
+<h5 class="text-lg font-bold tracking-tight mb-3" style="">Grafikbeschreibung</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Synthesize data from complex charts and present key findings effectively.</p>
+</div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- Task 04 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">04</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">forum</span>
+</div>
+<div class="flex-grow">
+<h5 class="text-lg font-bold tracking-tight mb-3" style="">Stellungnahme</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Express personal opinions and arguments on academic or social topics.</p>
+</div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- Task 05 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">05</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">groups</span>
+</div>
+<div class="flex-grow">
+<h5 class="text-lg font-bold tracking-tight mb-3" style="">Beratung</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Advise a peer on study options or daily life choices in a campus context.</p>
+</div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- Task 06 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">06</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">experiment</span>
+</div>
+<div class="flex-grow">
+<h5 class="text-lg font-bold tracking-tight mb-3" style="">Hypothesenbildung</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Speculate on future developments based on current trends and data.</p>
+</div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+<!-- Task 07 -->
+<div class="bg-surface p-8 flex flex-col min-h-[280px] sm:col-span-2 group transition-colors hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-6">
+<span class="text-4xl font-black text-outline-variant/40" style="">07</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl opacity-60" style="">lightbulb</span>
+</div>
+<div class="flex-grow">
+<h5 class="text-lg font-bold tracking-tight mb-3" style="">Ratschlag geben</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Formulate polite suggestions and provide reasons in informal daily contexts.</p>
+</div>
+<a class="mt-8 text-[0.65rem] font-black uppercase tracking-[0.15em] text-primary hover:text-primary-container transition-colors" href="#" style="">Select Format</a>
+</div>
+</div>
+</section>
+<!-- 4. Practice Entry Points (Footer section from SCREEN_67) -->
+<section class="flex flex-col md:flex-row gap-6 items-center justify-between p-12 bg-surface-container-low rounded-xl">
+<div class="max-w-md">
+<h3 class="text-3xl font-extrabold tracking-tighter mb-3" style="">Ready for a challenge?</h3>
+<p class="text-on-surface-variant text-sm" style="">Test your limits with a full-length simulated exam or focus on specific speaking skills in practice mode.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="px-8 py-5 bg-surface-container-highest text-on-surface rounded-full font-bold text-sm uppercase tracking-widest hover:bg-surface-container-high transition-colors text-center" style="">
+                    Practice Mode
+                </button>
+<button class="px-8 py-5 bg-primary text-on-primary rounded-full font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all shadow-xl shadow-primary/20 text-center" style="">
+                    Launch Full Simulation
+                </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50" style="">
+<span class="material-symbols-outlined text-3xl" data-icon="record_voice_over" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">record_voice_over</span>
+</button>
+</body></html>

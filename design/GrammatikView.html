@@ -1,0 +1,419 @@
+<!DOCTYPE html><html class="light" lang="de" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#fbf9f1",
+              "on-secondary-container": "#007167",
+              "secondary-container": "#91f4e6",
+              "on-primary-container": "#93e4d8",
+              "primary-container": "#00685f",
+              "surface-container-high": "#eae8e0",
+              "on-tertiary-container": "#cdd5ef",
+              "inverse-on-surface": "#f3f1e9",
+              "secondary-fixed-dim": "#74d7ca",
+              "tertiary-fixed-dim": "#bec6e0",
+              "tertiary-container": "#545c72",
+              "surface-container-highest": "#e4e3db",
+              "on-secondary-fixed": "#00201d",
+              "tertiary": "#3d445a",
+              "primary-fixed": "#a1f1e5",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f6f4ec",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "on-primary-fixed": "#00201d",
+              "outline-variant": "#bec9c6",
+              "on-primary-fixed-variant": "#005049",
+              "inverse-surface": "#30312c",
+              "surface-tint": "#066a61",
+              "primary": "#004e47",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "secondary": "#006a61",
+              "surface-bright": "#fbf9f1",
+              "on-error": "#ffffff",
+              "surface-dim": "#dcdad2",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1b1c17",
+              "on-tertiary-fixed": "#131b2e",
+              "inverse-primary": "#85d5c9",
+              "surface-variant": "#e4e3db",
+              "surface-container": "#f0eee6",
+              "outline": "#6e7977",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#85d5c9",
+              "background": "#fbf9f1",
+              "secondary-fixed": "#91f4e6",
+              "on-secondary-fixed-variant": "#005049",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#dae2fd",
+              "on-surface-variant": "#3e4947",
+              "on-background": "#1b1c17",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-72 z-40 bg-[#fbf9f1] dark:bg-slate-950 border-r border-[#00685f]/10 flex flex-col py-8 gap-2">
+<div class="px-8 mb-10">
+<h1 class="text-xl font-extrabold text-[#00685f]" style="">TestDaF Studio</h1>
+<p class="text-xs font-medium text-on-surface-variant opacity-70" style="">Academic Excellence</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="bg-[#00685f] text-white rounded-full mx-4 px-6 py-3 flex items-center gap-4 transition-all duration-300 ease-in-out" href="#" style="">
+<span class="material-symbols-outlined" data-icon="menu_book" style="">menu_book</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm font-medium" style="">Library</span>
+</a>
+<a class="text-[#3e4947] dark:text-slate-400 px-6 py-3 mx-4 flex items-center gap-4 hover:bg-[#f0eee6] dark:hover:bg-slate-900 rounded-full transition-all duration-300 ease-in-out" href="#" style="">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="">auto_stories</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm font-medium" style="">Learning Path</span>
+</a>
+<a class="text-[#3e4947] dark:text-slate-400 px-6 py-3 mx-4 flex items-center gap-4 hover:bg-[#f0eee6] dark:hover:bg-slate-900 rounded-full transition-all duration-300 ease-in-out" href="#" style="">
+<span class="material-symbols-outlined" data-icon="edit_note" style="">edit_note</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm font-medium" style="">Practice</span>
+</a>
+<a class="text-[#3e4947] dark:text-slate-400 px-6 py-3 mx-4 flex items-center gap-4 hover:bg-[#f0eee6] dark:hover:bg-slate-900 rounded-full transition-all duration-300 ease-in-out" href="#" style="">
+<span class="material-symbols-outlined" data-icon="translate" style="">translate</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm font-medium" style="">Vocabulary</span>
+</a>
+<a class="text-[#3e4947] dark:text-slate-400 px-6 py-3 mx-4 flex items-center gap-4 hover:bg-[#f0eee6] dark:hover:bg-slate-900 rounded-full transition-all duration-300 ease-in-out" href="#" style="">
+<span class="material-symbols-outlined" data-icon="military_tech" style="">military_tech</span>
+<span class="font-['Plus_Jakarta_Sans'] text-sm font-medium" style="">Achievements</span>
+</a>
+</nav>
+<!-- Sidebar Remediation Callout -->
+<div class="mx-6 p-6 rounded-xl bg-primary-fixed/30 border border-primary/5 mb-6">
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-2" style="">Focus Required</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4" style="">You have 12 unresolved gaps in <span class="font-semibold text-primary" style="">Subordinate Clauses</span>.</p>
+<button class="w-full py-2 bg-primary text-white rounded-full text-xs font-bold hover:opacity-90 transition-opacity" style="">
+                Start Remediation
+            </button>
+</div>
+<div class="mt-auto border-t border-outline-variant/10 pt-4 flex flex-col gap-1">
+<a class="text-[#3e4947] dark:text-slate-400 px-6 py-3 mx-4 flex items-center gap-4 hover:bg-[#f0eee6] rounded-full" href="#" style="">
+<span class="material-symbols-outlined" data-icon="help_outline" style="">help_outline</span>
+<span class="text-sm font-medium" style="">Support</span>
+</a>
+<a class="text-[#3e4947] dark:text-slate-400 px-6 py-3 mx-4 flex items-center gap-4 hover:bg-[#f0eee6] rounded-full" href="#" style="">
+<span class="material-symbols-outlined" data-icon="logout" style="">logout</span>
+<span class="text-sm font-medium" style="">Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-72 right-0 h-20 z-50 bg-[#fbf9f1] dark:bg-slate-950 flex items-center justify-between px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-60" style="">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-3 pl-12 pr-6 focus:ring-2 focus:ring-primary-fixed text-sm font-medium placeholder:text-on-surface-variant/50" placeholder="Search 160+ grammar lessons..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-2">
+<button class="p-2 text-[#3e4947] hover:bg-[#e4e3db] rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" data-icon="notifications" style="">notifications</span>
+</button>
+<button class="p-2 text-[#3e4947] hover:bg-[#e4e3db] rounded-full transition-colors" style="">
+<span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="professional portrait of a student in a minimalist campus setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB84mDBtQnVWe0ZStJQmOYWnOgUlhH8-hHNTmC1SSePdCa7FRnd3AGH1ins6YgqcQJfU0rstM9pGOl2aKJpkVIAk5jrQWa98q0Mk8iVq7rJnHO23Tg6Rx12WYUzVLFyOd2KrZ42_KbTk1_ydfvIdlB3pmySYnsLrA1MlYnA4ZePOXFs4r0kDUSpMh2AQMKZkycWM3dPdXq_xo2lUb6A-VTK6u0mIs0T6dS7eaOz4eM3tp3fyActUvjVg2r-zPWDnYhvRtlD83LIek" style="">
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-72 pt-28 px-12 pb-20">
+<!-- Welcome & Recommended Bento Section -->
+<section class="mb-16">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface mb-2" style="">Grammar<span style="font-size: 1.875rem; letter-spacing: -0.025em;">&nbsp;Library</span></h2>
+<p class="text-on-surface-variant text-sm font-medium max-w-lg" style="">Advanced grammatical structures curated for TestDaF C1 proficiency. Focus on your adaptive recommendations below.</p>
+</div>
+<div class="flex gap-4">
+<div class="text-right">
+<span class="block text-2xl font-bold text-primary" style="">64%</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold text-on-surface-variant opacity-60" style="">Overall Mastery</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<!-- Highlighted Recommendation -->
+<div class="col-span-12 lg:col-span-6 bg-primary-container text-white p-10 rounded-xl relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full">
+<span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 self-start" style="">Priority Recommendation</span>
+<h3 class="text-3xl font-bold mb-4 leading-tight" style="">Konjunktiv II: <br>Indirekte Rede &amp; Zweifel</h3>
+<p class="text-on-primary-container text-sm mb-8 max-w-md" style="">Critical for the Writing sub-test (Prüfungsteil 2). Your latest essay showed inconsistent verb forms in reporting speech.</p>
+<div class="mt-auto flex items-center gap-6">
+<button class="bg-white text-primary px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform" style="">
+                                Start Practice
+                            </button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="">schedule</span>
+<span class="text-xs font-medium" style="">45 min</span>
+</div>
+</div>
+</div>
+<div class="absolute right-[-10%] bottom-[-10%] opacity-20 pointer-events-none group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[240px]" data-icon="auto_stories" style="">auto_stories</span>
+</div>
+</div>
+<!-- Secondary Recommendation 1 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="edit_note" style="">edit_note</span>
+</span>
+<span class="text-[10px] font-bold text-on-surface-variant" style="">B2+ LEVEL</span>
+</div>
+<h4 class="font-bold text-lg mb-2" style="">Passiv-Ersatzformen</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed" style="">Refine academic tone in technical descriptions.</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-xs font-bold text-primary" style="">Resume</span>
+<span class="text-[10px] font-medium opacity-50" style="">12 min left</span>
+</div>
+</div>
+<!-- Secondary Recommendation 2 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between border border-outline-variant/10">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="history_edu" style="">history_edu</span>
+</span>
+<span class="text-[10px] font-bold text-on-surface-variant" style="">C1 LEVEL</span>
+</div>
+<h4 class="font-bold text-lg mb-2" style="">Nominalisierung</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed" style="">Turn actions into formal academic concepts.</p>
+</div>
+<div class="mt-6">
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Catalog Section -->
+<div class="flex gap-12">
+<!-- Left Content: High-Density Grid -->
+<div class="flex-1">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold" style="">Comprehensive Curriculum</h3>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-full border border-outline-variant/30 hover:bg-surface-container-low transition-colors" style="">
+                            Sort by: Newest <span class="material-symbols-outlined text-sm" style="">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Category: Word Order & Sentence Structure -->
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+<h4 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant" style="">Word Order &amp; Sentence Structure</h4>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Lesson Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2 py-0.5 rounded-full bg-surface-container text-[9px] font-bold" style="">VERB POSITION</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" style="">arrow_forward</span>
+</div>
+<h5 class="font-bold text-sm mb-1" style="">Te-Ka-Mo-Lo Rule</h5>
+<p class="text-[11px] text-on-surface-variant mb-4" style="">Mastering chronological and causal ordering.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-[10px] font-semibold text-primary" style="">Mastered</span>
+<span class="text-[10px] font-medium opacity-50" style="">15m • B2</span>
+</div>
+</div>
+<!-- Lesson Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2 py-0.5 rounded-full bg-surface-container text-[9px] font-bold" style="">COMPLEXITY</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" style="">arrow_forward</span>
+</div>
+<h5 class="font-bold text-sm mb-1" style="">Inversion in Sentences</h5>
+<p class="text-[11px] text-on-surface-variant mb-4" style="">Shifting focus through subject-verb inversion.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="h-1.5 w-16 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4 rounded-full"></div>
+</div>
+<span class="text-[10px] font-medium opacity-50" style="">20m • B2</span>
+</div>
+</div>
+<!-- Lesson Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2 py-0.5 rounded-full bg-surface-container text-[9px] font-bold" style="">ACADEMIC</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" style="">arrow_forward</span>
+</div>
+<h5 class="font-bold text-sm mb-1" style="">Mittelfeld-Organisation</h5>
+<p class="text-[11px] text-on-surface-variant mb-4" style="">Ordering pronouns and nouns in the middle field.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-[10px] font-semibold text-on-surface-variant" style="">Not Started</span>
+<span class="text-[10px] font-medium opacity-50" style="">35m • C1</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Verb Mastery -->
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<h4 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant" style="">Verb Mastery &amp; Tenses</h4>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2 py-0.5 rounded-full bg-surface-container text-[9px] font-bold" style="">SUBJUNCTIVE</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" style="">arrow_forward</span>
+</div>
+<h5 class="font-bold text-sm mb-1" style="">Konjunktiv I Essentials</h5>
+<p class="text-[11px] text-on-surface-variant mb-4" style="">Direct vs indirect reporting in newspaper styles.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="h-1.5 w-16 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full rounded-full"></div>
+</div>
+<span class="text-[10px] font-medium opacity-50" style="">25m • C1</span>
+</div>
+</div>
+<!-- Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg hover:bg-surface-container transition-colors cursor-pointer group border-2 border-primary/20">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[9px] font-extrabold" style="">RECOMMENDED</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" style="">arrow_forward</span>
+</div>
+<h5 class="font-bold text-sm mb-1" style="">Partizipialattribute</h5>
+<p class="text-[11px] text-on-surface-variant mb-4" style="">Complex participial constructions in reading tests.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-[10px] font-semibold text-on-surface-variant" style="">Not Started</span>
+<span class="text-[10px] font-medium opacity-50" style="">40m • C1</span>
+</div>
+</div>
+<!-- Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2 py-0.5 rounded-full bg-surface-container text-[9px] font-bold" style="">FUTURE</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" style="">arrow_forward</span>
+</div>
+<h5 class="font-bold text-sm mb-1" style="">Futur II Speculation</h5>
+<p class="text-[11px] text-on-surface-variant mb-4" style="">Expressing assumptions about the past.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-[10px] font-semibold text-on-surface-variant" style="">Not Started</span>
+<span class="text-[10px] font-medium opacity-50" style="">18m • B2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Filtering & Analytics -->
+<aside class="w-80 shrink-0 sticky top-28 h-fit">
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-8" style="">Refine Library</h3>
+<!-- Progress Filter -->
+<div class="mb-10">
+<label class="text-[10px] font-bold text-primary mb-4 block" style="">PROGRESS STATUS</label>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group" style="">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-0" type="checkbox">
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface transition-colors" style="">Not Started</span>
+<span class="ml-auto text-[10px] font-bold opacity-30" style="">92</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group" style="">
+<input checked="" class="rounded-sm border-outline-variant text-primary focus:ring-0" type="checkbox">
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface transition-colors" style="">In Progress</span>
+<span class="ml-auto text-[10px] font-bold opacity-30" style="">14</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group" style="">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-0" type="checkbox">
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface transition-colors" style="">Mastered</span>
+<span class="ml-auto text-[10px] font-bold opacity-30" style="">54</span>
+</label>
+</div>
+</div>
+<!-- Level Filter -->
+<div class="mb-10">
+<label class="text-[10px] font-bold text-primary mb-4 block" style="">PROFICIENCY LEVEL</label>
+<div class="flex gap-2">
+<button class="flex-1 py-2 text-[10px] font-bold rounded-full bg-white border border-outline-variant/20 hover:border-primary transition-colors" style="">B2</button>
+<button class="flex-1 py-2 text-[10px] font-bold rounded-full bg-primary text-white" style="">C1</button>
+<button class="flex-1 py-2 text-[10px] font-bold rounded-full bg-white border border-outline-variant/20 hover:border-primary transition-colors" style="">C2</button>
+</div>
+</div>
+<!-- Skill Filter -->
+<div class="mb-10">
+<label class="text-[10px] font-bold text-primary mb-4 block" style="">SKILL RELEVANCE</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-full bg-white text-[10px] font-bold border border-outline-variant/10 cursor-pointer hover:bg-primary/5 transition-colors" style="">Writing</span>
+<span class="px-3 py-1.5 rounded-full bg-white text-[10px] font-bold border border-outline-variant/10 cursor-pointer hover:bg-primary/5 transition-colors" style="">Speaking</span>
+<span class="px-3 py-1.5 rounded-full bg-primary text-white text-[10px] font-bold border border-transparent cursor-pointer" style="">Academic Reading</span>
+<span class="px-3 py-1.5 rounded-full bg-white text-[10px] font-bold border border-outline-variant/10 cursor-pointer hover:bg-primary/5 transition-colors" style="">Listening</span>
+</div>
+</div>
+<button class="w-full py-4 bg-surface-container-highest text-on-surface rounded-full text-xs font-bold hover:bg-outline-variant/30 transition-colors" style="">
+                        Clear All Filters
+                    </button>
+</div>
+<!-- Skill Summary Nudge -->
+<div class="mt-8 p-8 rounded-xl bg-[#004e47] text-white relative overflow-hidden">
+<h4 class="text-lg font-bold mb-2 relative z-10" style="">Study Pulse</h4>
+<p class="text-xs text-on-primary-container leading-relaxed mb-6 relative z-10" style="">You're averaging <span class="font-bold text-white" style="">4 lessons/week</span>. At this pace, you'll finish the C1 core by August 12th.</p>
+<div class="relative z-10 flex items-center justify-between">
+<span class="text-[10px] font-bold tracking-widest uppercase" style="">Consistency</span>
+<div class="flex gap-1">
+<div class="h-4 w-1 bg-white"></div>
+<div class="h-4 w-1 bg-white"></div>
+<div class="h-4 w-1 bg-white"></div>
+<div class="h-4 w-1 bg-white/30"></div>
+<div class="h-4 w-1 bg-white/30"></div>
+</div>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-9xl" style="">analytics</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Floating AI Advisor Nudge -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-white text-on-surface shadow-2xl p-4 pr-8 rounded-full flex items-center gap-4 hover:scale-105 transition-transform" style="">
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">auto_awesome</span>
+</div>
+<div class="text-left">
+<p class="text-[10px] font-bold text-primary uppercase tracking-tighter" style="">Adaptive Advisor</p>
+<p class="text-sm font-bold" style="">Ask about your gaps</p>
+</div>
+</button>
+</div>
+</body></html>

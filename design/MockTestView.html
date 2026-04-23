@@ -1,0 +1,332 @@
+<!DOCTYPE html><html class="light" lang="en" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Mock Exam Simulation Setup - TestDaF Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e4e3db",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-secondary-container": "#007167",
+                        "tertiary-container": "#545c72",
+                        "tertiary": "#3d445a",
+                        "surface-tint": "#066a61",
+                        "on-primary-container": "#93e4d8",
+                        "outline": "#6e7977",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#dae2fd",
+                        "on-primary-fixed": "#00201d",
+                        "secondary": "#006a61",
+                        "primary-container": "#00685f",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-tertiary-fixed": "#131b2e",
+                        "inverse-primary": "#85d5c9",
+                        "surface-container-highest": "#e4e3db",
+                        "surface-container": "#f0eee6",
+                        "on-tertiary-container": "#cdd5ef",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#91f4e6",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dcdad2",
+                        "on-surface-variant": "#3e4947",
+                        "surface-bright": "#fbf9f1",
+                        "secondary-fixed": "#91f4e6",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-background": "#1b1c17",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#a1f1e5",
+                        "on-secondary": "#ffffff",
+                        "background": "#fbf9f1",
+                        "primary-fixed-dim": "#85d5c9",
+                        "secondary-fixed-dim": "#74d7ca",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f6f4ec",
+                        "outline-variant": "#bec9c6",
+                        "on-surface": "#1b1c17",
+                        "on-secondary-fixed-variant": "#005049",
+                        "surface": "#fbf9f1",
+                        "primary": "#004e47",
+                        "inverse-surface": "#30312c",
+                        "surface-container-high": "#eae8e0",
+                        "inverse-on-surface": "#f3f1e9",
+                        "on-secondary-fixed": "#00201d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-72 bg-[#fbf9f1] py-8 px-6 sticky top-0">
+<div class="mb-12">
+<span class="text-2xl font-bold tracking-tighter text-[#1b1c17]" style="">DaF Focus</span>
+<p class="text-xs tracking-widest uppercase mt-1 text-on-surface-variant opacity-60" style="">Premium Tier</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#3e4947] font-medium hover:bg-[#e4e3db] transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="dashboard" style="">dashboard</span>
+<span class="text-sm" style="">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#00685f] font-bold bg-[#f0eee6] transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="assignment" style="">assignment</span>
+<span class="text-sm" style="">Mock Exams</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#3e4947] font-medium hover:bg-[#e4e3db] transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="menu_book" style="">menu_book</span>
+<span class="text-sm" style="">Practice Areas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#3e4947] font-medium hover:bg-[#e4e3db] transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="insights" style="">insights</span>
+<span class="text-sm" style="">Performance</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#3e4947] font-medium hover:bg-[#e4e3db] transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
+<span class="text-sm" style="">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-8">
+<div class="bg-surface-container p-6 rounded-xl flex flex-col items-center text-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a professional man with a kind expression and neutral studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN2-GJBgl8AmnIagUUy2_h0Qs-LHHLJrhvpdRUuv25VKklwJAvLMDBrF79HioOi2oTbJDKssb6sxon-WPyxtwZH1Utq58dPf1pzgiwTbE8Hk2gsxcJSdMVDvvD1WQLG_wNzQVy1A-6BtdIXmuuZ02pKkuTQ_gZpAdozIyLPoTmZ8_ZAYzZf5VVuXIWbPd02n2qOCddlju0F5ejEYnRvkp6bYz4FprNxY7RiQixRf5Qqm4TXjgBYL41NIdfOF-LxDFmX13PQlZrpiA" style="">
+</div>
+<div>
+<p class="text-sm font-bold" style="">Lukas Weber</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant" style="">B2-C1 Track</p>
+</div>
+<button class="w-full py-2 bg-primary text-on-primary rounded-full text-xs font-bold transition-transform active:scale-95" style="">Start Simulation</button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 min-h-screen relative">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-12 py-6 bg-[#fbf9f1]/80 backdrop-blur-md">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#1b1c17]" style="">Exam Simulation</span>
+<nav class="hidden lg:flex gap-6">
+<a class="text-sm tracking-wide text-[#3e4947] hover:text-[#004e47] transition-all" href="#" style="">Guidelines</a>
+<a class="text-sm tracking-wide text-[#3e4947] hover:text-[#004e47] transition-all" href="#" style="">Resources</a>
+<a class="text-sm tracking-wide text-[#3e4947] hover:text-[#004e47] transition-all" href="#" style="">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer group-hover:text-primary transition-colors" data-icon="notifications" style="">notifications</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="account_circle" style="">account_circle</span>
+</div>
+</header>
+<div class="px-12 py-10 max-w-7xl mx-auto">
+<!-- Hero Selection Area -->
+<div class="mb-16">
+<h1 class="text-5xl font-extrabold tracking-tight mb-4 text-on-surface" style="">Mock Exam Simulation</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl font-light" style="">Prepare your mind for the challenge ahead. Choose between a full simulation or a targeted section practice.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Main Configurations (Selection Area) -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Cards Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Full Mock Card -->
+<div class="group cursor-pointer relative overflow-hidden rounded-xl bg-surface-container-lowest p-8 transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5">
+<div class="mb-6 w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="history_edu" style="">history_edu</span>
+</div>
+<h3 class="text-2xl font-bold mb-2" style="">Full Mock Exam</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6" style="">A complete 180-minute simulation covering all four core competencies under strict official conditions.</p>
+<div class="flex items-center text-primary font-bold text-sm gap-2" style="">
+                                    Select Simulation
+                                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward" style="">arrow_forward</span>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 group-hover:scale-110 transition-transform"></div>
+</div>
+<!-- Single Section Card -->
+<div class="group cursor-pointer relative overflow-hidden rounded-xl bg-surface-container-low p-8 transition-all hover:bg-surface-container-high">
+<div class="mb-6 w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl" data-icon="target" style="">target</span>
+</div>
+<h3 class="text-2xl font-bold mb-2" style="">Single-Section</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6" style="">Focus on a specific module to refine your technique. Choose from reading, listening, writing, or speaking.</p>
+<div class="flex items-center text-on-surface font-bold text-sm gap-2" style="">
+                                    Select Module
+                                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward" style="">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Curriculum Structure -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight" style="">Curriculum Structure</h2>
+<p class="text-sm text-on-surface-variant mt-1" style="">Breakdown of the current examination framework.</p>
+</div>
+<span class="text-xs font-bold tracking-widest text-primary uppercase" style="">Version 2024.2</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Module 1 -->
+<div class="p-6 rounded-xl bg-surface-container-low flex justify-between items-center group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book" style="">menu_book</span>
+</div>
+<div>
+<p class="font-bold" style="">Leseverstehen</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest" style="">3 Tasks • 30 Items</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-light" style="">60m</span>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="p-6 rounded-xl bg-surface-container-low flex justify-between items-center group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="hearing" style="">hearing</span>
+</div>
+<div>
+<p class="font-bold" style="">Hörverstehen</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest" style="">3 Tasks • 25 Items</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-light" style="">40m</span>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="p-6 rounded-xl bg-surface-container-low flex justify-between items-center group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note" style="">edit_note</span>
+</div>
+<div>
+<p class="font-bold" style="">Schriftlicher Ausdruck</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest" style="">1 Major Task</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-light" style="">60m</span>
+</div>
+</div>
+<!-- Module 4 -->
+<div class="p-6 rounded-xl bg-surface-container-low flex justify-between items-center group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="record_voice_over" style="">record_voice_over</span>
+</div>
+<div>
+<p class="font-bold" style="">Mündlicher Ausdruck</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest" style="">7 Short Tasks</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-light" style="">35m</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Panel (Rules & Checklist) -->
+<div class="lg:col-span-4 space-y-8 sticky top-28">
+<!-- Examination Rules -->
+<div class="bg-on-background p-10 rounded-xl text-surface relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full"></div>
+<h4 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 opacity-60" style="">Session Protocols</h4>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim shrink-0" data-icon="timer" style="">timer</span>
+<div class="space-y-1">
+<p class="font-bold text-sm" style="">Strict Timing</p>
+<p class="text-xs text-surface-variant opacity-70 leading-relaxed" style="">Once a section starts, the clock cannot be paused. Sections auto-submit at zero.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim shrink-0" data-icon="low_priority" style="">low_priority</span>
+<div class="space-y-1">
+<p class="font-bold text-sm" style="">Fixed Sequence</p>
+<p class="text-xs text-surface-variant opacity-70 leading-relaxed" style="">Modules follow the official TestDaF order. You cannot skip or return to previous modules.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim shrink-0" data-icon="lock_clock" style="">lock_clock</span>
+<div class="space-y-1">
+<p class="font-bold text-sm" style="">Delayed Feedback</p>
+<p class="text-xs text-surface-variant opacity-70 leading-relaxed" style="">Results are released only after all sections are finished to simulate peak pressure.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Readiness Checklist -->
+<div class="bg-surface-container-high p-10 rounded-xl">
+<h4 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-on-surface-variant" style="">Readiness Check</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-3" style="">
+<input class="w-5 h-5 rounded-sm border-none bg-surface-container-lowest text-primary focus:ring-0" type="checkbox">
+<span class="text-sm font-medium" style="">Stable Internet (min 5mbps)</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<input class="w-5 h-5 rounded-sm border-none bg-surface-container-lowest text-primary focus:ring-0" type="checkbox">
+<span class="text-sm font-medium" style="">Quiet environment</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<input class="w-5 h-5 rounded-sm border-none bg-surface-container-lowest text-primary focus:ring-0" type="checkbox">
+<span class="text-sm font-medium" style="">Headphones/Mic ready</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<input class="w-5 h-5 rounded-sm border-none bg-surface-container-lowest text-primary focus:ring-0" type="checkbox">
+<span class="text-sm font-medium" style="">System permissions allowed</span>
+</li>
+</ul>
+<button class="mt-8 w-full py-4 bg-primary text-on-primary rounded-full font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-2" style="">
+                                Launch Simulation
+                                <span class="material-symbols-outlined text-lg" data-icon="rocket_launch" style="">rocket_launch</span>
+</button>
+<p class="text-[10px] text-center mt-4 text-on-surface-variant/60 uppercase tracking-widest" style="">Verification will begin immediately</p>
+</div>
+</div>
+</div>
+<!-- Footer Support Note -->
+<footer class="mt-24 pt-12 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between gap-8 items-start">
+<div class="max-w-md">
+<p class="text-2xl font-bold mb-4" style="">A sanctuary for high performance.</p>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Our simulation environment is calibrated to match the exact visual and functional parameters of the digital TestDaF, ensuring zero friction on your exam day.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="px-6 py-4 bg-surface-container-low rounded-lg">
+<p class="text-[10px] uppercase font-bold tracking-tighter text-primary" style="">Success Rate</p>
+<p class="text-2xl font-black" style="">94%</p>
+</div>
+<div class="px-6 py-4 bg-surface-container-low rounded-lg">
+<p class="text-[10px] uppercase font-bold tracking-tighter text-primary" style="">Avg Score</p>
+<p class="text-2xl font-black" style="">TDN 4</p>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</body></html>

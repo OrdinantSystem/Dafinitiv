@@ -1,9 +1,6 @@
-.vercel
-node_modules
-.next
-dist
-build
-coverage
-.env
-.env.*
+dist/
+node_modules/
+.next/
+*.tsbuildinfo
 .DS_Store
+.env.local

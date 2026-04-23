@@ -1,0 +1,70 @@
+export const SKILL_TAGS = [
+  "grammar.word_order",
+  "grammar.verb_position",
+  "grammar.case_and_articles",
+  "grammar.prepositions",
+  "grammar.connectors_and_subordination",
+  "grammar.adjective_endings",
+  "lexicon.academic_vocabulary",
+  "lexicon.collocations",
+  "discourse.cohesion",
+  "discourse.register",
+  "task.task_fulfillment",
+  "task.source_mediation",
+  "task.argumentation",
+  "reading.global_comprehension",
+  "reading.detail_comprehension",
+  "listening.global_comprehension",
+  "listening.detail_comprehension",
+  "writing.written_production",
+  "speaking.spoken_production",
+  "speaking.pronunciation_and_intonation"
+] as const;
+
+export type SkillTag = (typeof SKILL_TAGS)[number];
+
+export const SKILL_LABELS: Record<SkillTag, string> = {
+  "grammar.word_order": "Word order in main and embedded clauses",
+  "grammar.verb_position": "Verb placement and clause framing",
+  "grammar.case_and_articles": "Cases, articles, and gender agreement",
+  "grammar.prepositions": "Prepositions and case selection",
+  "grammar.connectors_and_subordination": "Connectors, subordination, and logical relations",
+  "grammar.adjective_endings": "Adjective endings and noun phrase inflection",
+  "lexicon.academic_vocabulary": "Academic and university-related vocabulary",
+  "lexicon.collocations": "Natural collocations and lexical precision",
+  "discourse.cohesion": "Text cohesion and linking devices",
+  "discourse.register": "Register control and task-appropriate tone",
+  "task.task_fulfillment": "Task fulfillment and instruction coverage",
+  "task.source_mediation": "Source integration, summarization, and mediation",
+  "task.argumentation": "Argument building, balancing, and justification",
+  "reading.global_comprehension": "Global reading comprehension",
+  "reading.detail_comprehension": "Detailed reading comprehension",
+  "listening.global_comprehension": "Global listening comprehension",
+  "listening.detail_comprehension": "Detailed listening comprehension",
+  "writing.written_production": "Written fluency and structured expression",
+  "speaking.spoken_production": "Spoken fluency and structured response",
+  "speaking.pronunciation_and_intonation": "Pronunciation and intelligibility"
+};
+
+export const SKILL_CATEGORIES: Record<SkillTag, string> = {
+  "grammar.word_order": "grammar",
+  "grammar.verb_position": "grammar",
+  "grammar.case_and_articles": "grammar",
+  "grammar.prepositions": "grammar",
+  "grammar.connectors_and_subordination": "grammar",
+  "grammar.adjective_endings": "grammar",
+  "lexicon.academic_vocabulary": "lexicon",
+  "lexicon.collocations": "lexicon",
+  "discourse.cohesion": "discourse",
+  "discourse.register": "discourse",
+  "task.task_fulfillment": "task",
+  "task.source_mediation": "task",
+  "task.argumentation": "task",
+  "reading.global_comprehension": "reading",
+  "reading.detail_comprehension": "reading",
+  "listening.global_comprehension": "listening",
+  "listening.detail_comprehension": "listening",
+  "writing.written_production": "writing",
+  "speaking.spoken_production": "speaking",
+  "speaking.pronunciation_and_intonation": "speaking"
+};

@@ -1,0 +1,288 @@
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/plus-jakarta-sans/800.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-surface: 251 249 241;
+  --color-surface-bright: 255 253 248;
+  --color-surface-dim: 220 217 208;
+  --color-surface-container: 240 238 230;
+  --color-surface-container-low: 246 244 236;
+  --color-surface-container-high: 234 232 224;
+  --color-surface-container-highest: 228 227 219;
+  --color-surface-container-lowest: 255 255 255;
+  --color-surface-variant: 228 227 219;
+  --color-primary: 0 78 71;
+  --color-primary-container: 0 104 95;
+  --color-primary-fixed: 181 239 234;
+  --color-secondary: 0 106 97;
+  --color-secondary-container: 145 244 230;
+  --color-tertiary: 61 68 90;
+  --color-midnight: 15 23 42;
+  --color-midnight-soft: 26 28 30;
+  --color-on-surface: 27 28 23;
+  --color-on-surface-variant: 62 73 71;
+  --color-outline: 110 121 119;
+  --color-outline-variant: 190 201 198;
+  --color-error: 186 26 26;
+  --color-error-container: 255 218 214;
+  --color-on-primary: 255 255 255;
+}
+
+@layer base {
+  * {
+    @apply min-w-0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgb(var(--color-primary-fixed) / 0.26), transparent 28%),
+      radial-gradient(circle at top right, rgb(var(--color-surface-container-highest) / 0.45), transparent 24%),
+      linear-gradient(180deg, rgb(var(--color-surface-bright)) 0%, rgb(var(--color-surface)) 22%, rgb(var(--color-surface-container-low)) 100%);
+    @apply min-h-screen text-on-surface antialiased;
+  }
+
+  ::selection {
+    background: rgb(var(--color-primary-container) / 0.18);
+    color: rgb(var(--color-on-surface));
+  }
+
+  a {
+    @apply transition-colors;
+  }
+
+  input,
+  textarea {
+    @apply outline-none transition-colors;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .paper-panel {
+    @apply rounded-[2rem] bg-surface-container-lowest shadow-paper;
+  }
+
+  .muted-panel {
+    @apply rounded-[2rem] bg-surface-container;
+  }
+
+  .inset-panel {
+    @apply rounded-[2rem] bg-surface-container-low;
+  }
+
+  .night-panel {
+    background:
+      linear-gradient(160deg, rgb(var(--color-midnight-soft)) 0%, rgb(var(--color-midnight)) 100%);
+    @apply rounded-[2rem] text-white shadow-ambient-lg;
+  }
+
+  .glass-panel {
+    background: rgb(var(--color-surface-bright) / 0.74);
+    @apply rounded-[2rem] backdrop-blur-2xl;
+  }
+
+  .ghost-outline {
+    box-shadow: inset 0 0 0 1px rgb(var(--color-outline-variant) / 0.22);
+  }
+
+  .editorial-kicker {
+    @apply text-[0.68rem] font-extrabold uppercase tracking-[0.24em] text-on-surface-variant;
+  }
+
+  .editorial-kicker-contrast {
+    @apply text-[0.68rem] font-extrabold uppercase tracking-[0.24em] text-white/70;
+  }
+
+  .editorial-title {
+    @apply text-[2.6rem] font-extrabold leading-[0.98] tracking-[-0.035em] text-on-surface md:text-[3.7rem];
+  }
+
+  .editorial-title-compact {
+    @apply text-[2rem] font-extrabold leading-tight tracking-[-0.03em] text-on-surface md:text-[2.7rem];
+  }
+
+  .editorial-subtitle {
+    @apply text-base leading-8 text-on-surface-variant md:text-lg;
+  }
+
+  .section-frame {
+    @apply relative overflow-hidden rounded-[2.5rem] px-6 py-8 md:px-8 md:py-10;
+  }
+
+  .workspace-grid {
+    @apply grid gap-6 xl:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)];
+  }
+
+  .panel-stack > * + * {
+    @apply mt-6;
+  }
+
+  .floating-chip {
+    @apply rounded-full bg-primary/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary;
+  }
+
+  .soft-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-outline-variant) / 0.5) transparent;
+  }
+
+  .soft-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  .soft-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .soft-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-outline-variant) / 0.48);
+    border-radius: 9999px;
+  }
+
+  .hidden-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stealth-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-outline) / 0.24) transparent;
+  }
+
+  .stealth-scrollbar::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  .stealth-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .stealth-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-outline) / 0.22);
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background-clip: content-box;
+  }
+
+  .stealth-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-outline) / 0.32);
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  .llm-markdown {
+    @apply text-sm leading-6 text-current;
+  }
+
+  .llm-markdown > * + * {
+    @apply mt-3;
+  }
+
+  .llm-markdown h1,
+  .llm-markdown h2,
+  .llm-markdown h3,
+  .llm-markdown h4 {
+    @apply font-extrabold tracking-[-0.03em] text-current;
+  }
+
+  .llm-markdown h1 {
+    @apply text-[1.15rem];
+  }
+
+  .llm-markdown h2 {
+    @apply text-[1.05rem];
+  }
+
+  .llm-markdown h3,
+  .llm-markdown h4 {
+    @apply text-[0.98rem];
+  }
+
+  .llm-markdown p,
+  .llm-markdown li,
+  .llm-markdown blockquote {
+    @apply leading-6;
+  }
+
+  .llm-markdown ul,
+  .llm-markdown ol {
+    @apply ml-5 space-y-1;
+  }
+
+  .llm-markdown ul {
+    list-style: disc;
+  }
+
+  .llm-markdown ol {
+    list-style: decimal;
+  }
+
+  .llm-markdown li > ul,
+  .llm-markdown li > ol {
+    @apply mt-2;
+  }
+
+  .llm-markdown blockquote {
+    @apply rounded-[0.95rem] border-l-4 border-primary/25 bg-surface-container-low px-4 py-3 text-on-surface-variant;
+  }
+
+  .llm-markdown hr {
+    @apply my-4 border-0 border-t border-outline-variant/35;
+  }
+
+  .llm-markdown code {
+    @apply rounded-[0.45rem] bg-surface-container px-1.5 py-0.5 font-medium text-[0.84em] text-current;
+  }
+
+  .llm-markdown pre {
+    @apply overflow-x-auto rounded-[1rem] bg-surface-container px-4 py-3 text-[0.9rem] leading-6 text-current ghost-outline;
+  }
+
+  .llm-markdown pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .llm-markdown table {
+    @apply w-full border-collapse overflow-hidden rounded-[1rem] text-left text-[0.92rem];
+  }
+
+  .llm-markdown thead {
+    @apply bg-surface-container;
+  }
+
+  .llm-markdown th,
+  .llm-markdown td {
+    @apply border border-outline-variant/30 px-3 py-2 align-top;
+  }
+
+  .llm-markdown th {
+    @apply font-extrabold text-current;
+  }
+
+  .llm-markdown input[type="checkbox"] {
+    accent-color: rgb(var(--color-primary));
+  }
+}
