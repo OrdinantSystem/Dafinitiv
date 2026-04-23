@@ -21,8 +21,17 @@ test('chat exercise routes, catalog, and prompt files are present', () => {
   assert.match(chatComponent, /lockSystemPrompt/);
   assert.match(chatComponent, /mobileEdgeToEdge\?: boolean/);
   assert.match(chatComponent, /mobileEdgeToEdge = false/);
-  assert.match(chatComponent, /\? "-mx-4 w-screen max-w-none px-0 md:mx-auto md:w-auto md:max-w-editorial md:px-8"/);
+  assert.match(chatComponent, /exerciseMode\?: boolean/);
+  assert.match(chatComponent, /exerciseMode = false/);
+  assert.match(chatComponent, /minimumComposerHeight = exerciseMode \? 24 : 28/);
+  assert.match(chatComponent, /composerPlaceholder = exerciseMode \? "Type here…" : `Message \$\{runtime\.model\}\.\.\.`/);
+  assert.match(chatComponent, /exerciseMode \? "min-h-\[calc\(100dvh-7rem\)\] md:min-h-\[720px\]" : "min-h-\[720px\]"/);
+  assert.match(chatComponent, /exerciseMode \? "px-0 pb-0 pt-2" : "px-1 pb-1 pt-5"/);
+  assert.match(chatComponent, /pointer-events-none absolute inset-y-0 right-2 flex items-end pb-2/);
+  assert.match(detailPage, /content: `\$\{exercise\.title\}\. Start when you're ready\.`/);
+  assert.match(detailPage, /conversationSubtitle="Exercise"/);
   assert.match(detailPage, /mobileEdgeToEdge/);
+  assert.match(detailPage, /exerciseMode/);
   assert.doesNotMatch(detailPage, /dynamic\s*=\s*"force-dynamic"/);
 
   const expectedSlugs = [

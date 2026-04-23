@@ -222,6 +222,7 @@ export function LlmTestChat({
   defaultSystemPromptId = "none",
   lockSystemPrompt = false,
   mobileEdgeToEdge = false,
+  exerciseMode = false,
   conversationTitle = "MiniMax Test Chat",
   conversationSubtitle = "Conversation"
 }: {
@@ -231,6 +232,7 @@ export function LlmTestChat({
   defaultSystemPromptId?: string;
   lockSystemPrompt?: boolean;
   mobileEdgeToEdge?: boolean;
+  exerciseMode?: boolean;
   conversationTitle?: string;
   conversationSubtitle?: string;
 }) {
@@ -326,6 +328,8 @@ export function LlmTestChat({
             : null;
 
   const canSend = runtime.liveEnabled && input.trim().length > 0 && !isStreaming;
+  const minimumComposerHeight = exerciseMode ? 24 : 28;
+  const composerPlaceholder = exerciseMode ? "Type here…" : `Message ${runtime.model}...`;
   const conversationHistory = useMemo(
     () =>
       messages
@@ -389,9 +393,9 @@ export function LlmTestChat({
     }
 
     textareaRef.current.style.height = "0px";
-    const nextHeight = Math.min(Math.max(textareaRef.current.scrollHeight, 28), 220);
+    const nextHeight = Math.min(Math.max(textareaRef.current.scrollHeight, minimumComposerHeight), 220);
     textareaRef.current.style.height = `${nextHeight}px`;
-  }, [input]);
+  }, [input, minimumComposerHeight]);
 
   const toggleThinking = (messageId: string) => {
     setOpenThinkingIds((current) => ({
@@ -1074,7 +1078,10 @@ export function LlmTestChat({
         ) : null}
 
         <Card
-          className="relative flex min-h-[720px] flex-col overflow-hidden xl:sticky xl:top-8 xl:h-[calc(100dvh-8rem)]"
+          className={cn(
+            "relative flex flex-col overflow-hidden xl:sticky xl:top-8 xl:h-[calc(100dvh-8rem)]",
+            exerciseMode ? "min-h-[calc(100dvh-7rem)] md:min-h-[720px]" : "min-h-[720px]"
+          )}
           tone="default"
         >
           <div className="flex items-center justify-between gap-4 border-b border-outline-variant/20 pb-5">
@@ -1095,7 +1102,10 @@ export function LlmTestChat({
           </div>
 
           <div
-                  className="hidden-scrollbar min-h-0 flex-1 space-y-3 overflow-y-auto py-6"
+            className={cn(
+              "hidden-scrollbar min-h-0 flex-1 space-y-3 overflow-y-auto",
+              exerciseMode ? "pt-4 pb-2" : "py-6"
+            )}
             onScroll={handleMessageListScroll}
             ref={messageScrollRef}
           >
@@ -1174,18 +1184,62 @@ export function LlmTestChat({
             })}
           </div>
 
-          <div className="border-t border-outline-variant/20 bg-surface-container-lowest/95 px-1 pb-1 pt-5 backdrop-blur-sm">
-            <div className="rounded-[1.7rem] bg-surface-container px-3.5 py-2.5 shadow-soft ghost-outline">
+          <div
+            className={cn(
+              "border-t border-outline-variant/20 bg-surface-container-lowest/95 backdrop-blur-sm",
+              exerciseMode ? "px-0 pb-0 pt-2" : "px-1 pb-1 pt-5"
+            )}
+          >
+            <div
+              className={cn(
+                "bg-surface-container shadow-soft ghost-outline",
+                exerciseMode ? "relative rounded-[1.45rem] px-3 py-2" : "rounded-[1.7rem] px-3.5 py-2.5"
+              )}
+            >
               <textarea
-                className="stealth-scrollbar max-h-[220px] min-h-[28px] w-full resize-none bg-transparent py-0 text-[0.98rem] leading-7 text-on-surface placeholder:text-on-surface-variant/55 focus:outline-none"
+                className={cn(
+                  "stealth-scrollbar w-full resize-none bg-transparent text-[0.98rem] text-on-surface placeholder:text-on-surface-variant/55 focus:outline-none",
+                  exerciseMode
+                    ? "max-h-[220px] min-h-[1lh] py-0 leading-6 pr-12"
+                    : "max-h-[220px] min-h-[28px] py-0 leading-7"
+                )}
                 onChange={(event) => handleInputChange(event.target.value)}
                 onKeyDown={handleComposerKeyDown}
-                placeholder={`Message ${runtime.model}...`}
+                placeholder={composerPlaceholder}
                 ref={textareaRef}
                 rows={1}
                 value={input}
               />
 
+              {exerciseMode ? (
+                <div className="pointer-events-none absolute inset-y-0 right-2 flex items-end pb-2">
+                  <div className="pointer-events-auto flex items-center justify-end">
+                    {isStreaming ? (
+                      <button
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface-container-high text-on-surface shadow-soft transition-all duration-200 hover:bg-surface-container-highest active:scale-[0.98]"
+                        onClick={stopStreaming}
+                        type="button"
+                      >
+                        <AppIcon className="h-3.5 w-3.5" name="stop" />
+                      </button>
+                    ) : (
+                      <button
+                        className={cn(
+                          "inline-flex h-9 w-9 items-center justify-center rounded-full transition-all duration-200",
+                          canSend
+                            ? "bg-cta-gradient text-on-primary shadow-lift hover:brightness-[1.04] active:scale-[0.98]"
+                            : "bg-surface-container-high text-on-surface-variant/55"
+                        )}
+                        disabled={!canSend}
+                        onClick={send}
+                        type="button"
+                      >
+                        <AppIcon className="h-4 w-4" name="arrow-up" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ) : (
                 <div className="mt-1.5 flex items-end justify-between gap-4">
                   <div className="min-h-[1.1rem] text-[0.74rem] font-medium text-on-surface-variant/72">
                     {composerStatus ? <span>{composerStatus}</span> : null}
@@ -1217,8 +1271,9 @@ export function LlmTestChat({
                     )}
                   </div>
                 </div>
-              </div>
+              )}
             </div>
+          </div>
         </Card>
       </section>
     </div>

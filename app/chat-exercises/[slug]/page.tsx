@@ -48,7 +48,7 @@ export default async function ChatExerciseDetailPage({
     {
       id: `${exercise.slug}-welcome`,
       role: "assistant",
-      content: exercise.initialAssistantMessage,
+      content: `${exercise.title}. Start when you're ready.`,
       meta: {
         model: env.OPENAI_MODEL,
         timestamp: new Date().toISOString()
@@ -89,12 +89,13 @@ export default async function ChatExerciseDetailPage({
       </section>
 
       <LlmTestChat
-        conversationSubtitle="Exercise Chat"
+        conversationSubtitle="Exercise"
         conversationTitle={exercise.title}
         defaultSystemPromptId={selectedPrompt.id}
         initialMessages={initialMessages}
         lockSystemPrompt
         mobileEdgeToEdge
+        exerciseMode
         runtime={{
           runtimeMode: runtime.mode,
           runtimeLabel: runtime.label,
