@@ -54,7 +54,7 @@ export function BrandLockup({
             compact ? "text-[1.15rem]" : "text-[1.35rem]"
           )}
         >
-          <span className="text-primary">DaF</span>initv
+          TestDaF / Dafinitiv
         </p>
         {showDescriptor ? (
           <p className="mt-1 truncate text-[0.58rem] font-extrabold uppercase tracking-[0.22em] text-on-surface-variant/72">
