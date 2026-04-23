@@ -15,7 +15,8 @@ const NAV_ITEMS: Array<{ href: string; icon: IconName; label: string }> = [
   { href: "/grammar-library", icon: "layers", label: "Grammatik" },
   { href: "/mistake-notebook", icon: "notebook", label: "Notebook" },
   { href: "/llm-test", icon: "rocket", label: "LLM Test" },
-  { href: "/mock-test", icon: "target", label: "Mock-Test" }
+  { href: "/mock-test", icon: "target", label: "Mock-Test" },
+  { href: "/trial", icon: "settings", label: "Trial" }
 ];
 
 function isActive(pathname: string, href: string): boolean {

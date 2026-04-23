@@ -6,7 +6,7 @@ import { getWebApplicationService } from "@/lib/server/app-service";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "DaFinitv",
+  title: "TestDaF / Dafinitiv",
   description: "AI-first TestDaF preparation studio"
 };
 

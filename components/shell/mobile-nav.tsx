@@ -16,6 +16,7 @@ const PRACTICE_HREF = buildWorkspaceHref({
 const MOBILE_ITEMS: Array<{ href: string; icon: IconName; label: string }> = [
   { href: "/", icon: "home", label: "Home" },
   { href: "/lesen", icon: "book", label: "Lesen" },
+  { href: "/trial", icon: "settings", label: "Trial" },
   { href: PRACTICE_HREF, icon: "sparkles", label: "Üben" },
   { href: "/llm-test", icon: "rocket", label: "LLM" },
   { href: "/mock-test", icon: "target", label: "Mock" }
