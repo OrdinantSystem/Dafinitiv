@@ -65,7 +65,7 @@ export default async function ChatExerciseDetailPage({
           <p className="editorial-subtitle mt-5">{exercise.summary}</p>
         </div>
 
-        <Card className="space-y-5" tone="glass">
+        <Card className="space-y-5 hidden md:block" tone="glass">
           <div>
             <p className="editorial-kicker">Training goal</p>
             <p className="mt-3 text-sm leading-7 text-on-surface">{exercise.trainingGoal}</p>

@@ -875,7 +875,9 @@ export function LlmTestChat({
           : "mx-auto max-w-editorial px-4 md:px-8"
       )}
     >
-      <div className="flex flex-wrap gap-3">
+      <div className={cn(
+        exerciseMode ? "hidden md:flex flex-wrap gap-3" : "flex flex-wrap gap-3"
+      )}>
         <Pill
           className="gap-2 px-5 py-2.5 text-[0.68rem]"
           size="md"
@@ -1096,7 +1098,11 @@ export function LlmTestChat({
               </p>
             </div>
             <button
-              className="inline-flex items-center gap-2 rounded-full bg-surface-container-low px-3.5 py-2 text-[0.62rem] font-extrabold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high"
+              className={cn(
+                exerciseMode
+                  ? "hidden md:inline-flex items-center gap-2 rounded-full bg-surface-container-low px-3.5 py-2 text-[0.62rem] font-extrabold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high"
+                  : "inline-flex items-center gap-2 rounded-full bg-surface-container-low px-3.5 py-2 text-[0.62rem] font-extrabold uppercase tracking-[0.16em] text-on-surface-variant transition-colors hover:bg-surface-container-high"
+              )}
               onClick={toggleRenderMode}
               type="button"
             >
