@@ -1,24 +1,25 @@
 import type { ShellChromeViewModel } from "@/lib/mappers/types";
 import { BrandLockup } from "@/components/shell/brand-lockup";
+import { MobileMenu } from "@/components/shell/mobile-menu";
 import { cn } from "@/lib/utils";
 
 function getShellTitle(pathname: string): { title: string; subtitle: string } {
   if (pathname.startsWith("/workspace")) {
     return {
-      title: "DaFinitv Workspace",
+      title: "TestDaF / Dafinitiv Workspace",
       subtitle: "Geführter Arbeitsraum"
     };
   }
 
   if (pathname.startsWith("/_not-found")) {
     return {
-      title: "DaFinitv",
+      title: "TestDaF / Dafinitiv",
       subtitle: "Minimal frame"
     };
   }
 
   return {
-    title: "DaFinitv",
+    title: "TestDaF / Dafinitiv",
     subtitle: ""
   };
 }
@@ -56,7 +57,7 @@ export function getShellChromeViewModel(
     subtitle: titles.subtitle,
     utilityItems: [
       { label: "Laufzeit", value: runtimeLabel },
-      { label: "Studio", value: "DaFinitv" }
+      { label: "Studio", value: "TestDaF / Dafinitiv" }
     ]
   };
 }
@@ -114,6 +115,7 @@ export function TopBar({
           </div>
 
           <div className="flex shrink-0 items-center gap-2 md:gap-3">
+            <MobileMenu pathname={pathname} />
             {chrome.utilityItems.map((item) => (
               <div
                 className="hidden rounded-full bg-surface-container-low px-3 py-2 text-[0.58rem] font-extrabold uppercase tracking-[0.18em] text-on-surface-variant md:block"
@@ -123,7 +125,7 @@ export function TopBar({
                 <span className="text-on-surface">{item.value}</span>
               </div>
             ))}
-            <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+            <div className="hidden h-2.5 w-2.5 rounded-full bg-primary md:block" />
           </div>
         </div>
         <div className="h-3 bg-gradient-to-b from-surface/55 via-surface/18 to-transparent" />
