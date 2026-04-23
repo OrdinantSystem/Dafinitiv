@@ -19,6 +19,10 @@ test('chat exercise routes, catalog, and prompt files are present', () => {
   assert.match(detailPage, /getChatExerciseBySlug/);
   assert.match(chatComponent, /defaultSystemPromptId/);
   assert.match(chatComponent, /lockSystemPrompt/);
+  assert.match(chatComponent, /mobileEdgeToEdge\?: boolean/);
+  assert.match(chatComponent, /mobileEdgeToEdge = false/);
+  assert.match(chatComponent, /\? "-mx-4 w-screen max-w-none px-0 md:mx-auto md:w-auto md:max-w-editorial md:px-8"/);
+  assert.match(detailPage, /mobileEdgeToEdge/);
   assert.doesNotMatch(detailPage, /dynamic\s*=\s*"force-dynamic"/);
 
   const expectedSlugs = [

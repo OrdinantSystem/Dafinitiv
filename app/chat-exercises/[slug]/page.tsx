@@ -94,6 +94,7 @@ export default async function ChatExerciseDetailPage({
         defaultSystemPromptId={selectedPrompt.id}
         initialMessages={initialMessages}
         lockSystemPrompt
+        mobileEdgeToEdge
         runtime={{
           runtimeMode: runtime.mode,
           runtimeLabel: runtime.label,

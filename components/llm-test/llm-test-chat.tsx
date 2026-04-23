@@ -221,6 +221,7 @@ export function LlmTestChat({
   systemPromptOptions,
   defaultSystemPromptId = "none",
   lockSystemPrompt = false,
+  mobileEdgeToEdge = false,
   conversationTitle = "MiniMax Test Chat",
   conversationSubtitle = "Conversation"
 }: {
@@ -229,6 +230,7 @@ export function LlmTestChat({
   systemPromptOptions: LlmTestSystemPromptOption[];
   defaultSystemPromptId?: string;
   lockSystemPrompt?: boolean;
+  mobileEdgeToEdge?: boolean;
   conversationTitle?: string;
   conversationSubtitle?: string;
 }) {
@@ -861,7 +863,14 @@ export function LlmTestChat({
   };
 
   return (
-    <div className="mx-auto max-w-editorial space-y-8 px-4 md:px-8">
+    <div
+      className={cn(
+        "space-y-8",
+        mobileEdgeToEdge
+          ? "-mx-4 w-screen max-w-none px-0 md:mx-auto md:w-auto md:max-w-editorial md:px-8"
+          : "mx-auto max-w-editorial px-4 md:px-8"
+      )}
+    >
       <div className="flex flex-wrap gap-3">
         <Pill
           className="gap-2 px-5 py-2.5 text-[0.68rem]"
