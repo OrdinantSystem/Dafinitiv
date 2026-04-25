@@ -16,6 +16,6 @@ export function buildGrammarTrainingBrief(learnerState: LearnerState): {
         ? "training.grammar.micro_cycle"
         : "training.grammar.remediation",
     focusSkills: weakGrammar.map((skill) => skill.id),
-    rationale: "Select the weakest grammar nodes and turn them into short adaptive drills."
+    rationale: "Wähle die schwächsten Grammatikbausteine aus und forme daraus kurze adaptive Übungen."
   };
 }

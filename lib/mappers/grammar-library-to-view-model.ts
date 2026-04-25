@@ -5,31 +5,55 @@ import type { GrammarLibraryViewModel } from "@/lib/mappers/types";
 import { buildGrammarWorkspaceHref } from "@/lib/workspace-context";
 import { average } from "@/lib/utils";
 
+const GRAMMAR_SKILL_TITLES: Record<string, string> = {
+  "grammar.word_order": "Wortstellung in Haupt- und Nebensätzen",
+  "grammar.verb_position": "Verbposition und Satzklammer",
+  "grammar.case_and_articles": "Kasus, Artikel und Genusabgleich",
+  "grammar.prepositions": "Präpositionen und Kasuswahl",
+  "grammar.connectors_and_subordination": "Konnektoren, Unterordnung und logische Beziehungen",
+  "grammar.adjective_endings": "Adjektivendungen und Nominalgruppenflexion"
+};
+
+const GRAMMAR_BADGES: Record<string, string> = {
+  "grammar.word_order": "SATZBAU",
+  "grammar.verb_position": "VERBPOSITION",
+  "grammar.case_and_articles": "KASUS & ARTIKEL",
+  "grammar.prepositions": "PRÄPOSITIONEN",
+  "grammar.connectors_and_subordination": "KONNEKTOREN",
+  "grammar.adjective_endings": "ADJEKTIVE"
+};
+
+function localizeGrammarSkillTitle(skill: SkillNode): string {
+  return GRAMMAR_SKILL_TITLES[skill.id] ?? skill.label;
+}
+
+function toBadgeLabel(skill: SkillNode): string {
+  return GRAMMAR_BADGES[skill.id] ?? (skill.id.split(".")[1]?.replace(/_/g, " ").toUpperCase() ?? "GRAMMATIK");
+}
+
 function toLevelLabel(level: number): string {
   if (level >= 4) {
-    return "C1 LEVEL";
+    return "C1-NIVEAU";
   }
 
   if (level === 3) {
-    return "B2+ LEVEL";
+    return "B2+-NIVEAU";
   }
 
-  return "B2 LEVEL";
+  return "B2-NIVEAU";
 }
 
 function toStatusLabel(skill: SkillNode, index: number): string {
   if (skill.level >= 4) {
-    return "Mastered";
+    return "Abgeschlossen";
   }
 
-  return index % 2 === 0 ? "In Progress" : "Not Started";
+  return index % 2 === 0 ? "In Arbeit" : "Nicht begonnen";
 }
 
 function toLesson(skill: SkillNode, index: number) {
-  const badge = skill.id.split(".")[1]?.replace(/_/g, " ") ?? "grammar";
-
   return {
-    title: skill.label,
+    title: localizeGrammarSkillTitle(skill),
     summary:
       "Aktuelles Niveau " +
       String(skill.level) +
@@ -41,9 +65,9 @@ function toLesson(skill: SkillNode, index: number) {
       focusSkill: skill.id,
       agentRole: "grammar_trainer"
     }),
-    badge: badge.toUpperCase(),
+    badge: toBadgeLabel(skill),
     statusLabel: toStatusLabel(skill, index),
-    durationLabel: String(15 + index * 5) + "m • " + toLevelLabel(skill.level).replace(" LEVEL", ""),
+    durationLabel: String(15 + index * 5) + " Min • " + toLevelLabel(skill.level).replace("-NIVEAU", ""),
     progressPercent: Math.min(100, skill.level * 20),
     emphasis: index === 1
   };
@@ -67,14 +91,16 @@ export function mapGrammarLibraryToViewModel(input: {
   const secondSecondary = lessonSource[2] ?? lessonSource[1] ?? fallbackSkill;
 
   return {
-    title: "Grammar Library",
+    title: "Grammatikbibliothek",
     subtitle:
-      "Kuratiertes Remediation-Board für grammatische Muster, die deinen nächsten TestDaF-Schritt am stärksten beeinflussen.",
+      "Kuratiertes Förderboard für grammatische Muster, die deinen nächsten TestDaF-Schritt am stärksten beeinflussen.",
     mastery,
     featuredRecommendation: {
-      title: fallbackSkill?.label ?? "Gezielte Grammatik-Sequenz",
+      title: fallbackSkill ? localizeGrammarSkillTitle(fallbackSkill) : "Gezielte Grammatik-Sequenz",
       rationale: input.brief.rationale,
-      focusSkills: input.brief.focusSkills,
+      focusSkills: input.brief.focusSkills.map((skillId) =>
+        GRAMMAR_SKILL_TITLES[skillId] ?? skillId.replace(/^grammar\./, "").replace(/_/g, " ")
+      ),
       href: buildGrammarWorkspaceHref("grammar-focus", {
         sourcePage: "grammar_library",
         focusSkill: input.brief.focusSkills[0],
@@ -85,7 +111,7 @@ export function mapGrammarLibraryToViewModel(input: {
     },
     secondaryRecommendations: [
       {
-        title: firstSecondary?.label ?? "Passiv-Ersatzformen",
+        title: firstSecondary ? localizeGrammarSkillTitle(firstSecondary) : "Passiv-Ersatzformen",
         summary: "Kurze Sequenz zur Absicherung akademischer Präzision und Satzsteuerung.",
         href: buildGrammarWorkspaceHref(
           (firstSecondary?.id ?? "grammar.word_order").replace(/\./g, "-"),
@@ -96,12 +122,12 @@ export function mapGrammarLibraryToViewModel(input: {
           }
         ),
         levelLabel: toLevelLabel(firstSecondary?.level ?? 3),
-        statusLabel: "Resume",
-        durationLabel: "12 Min left",
+        statusLabel: "Fortsetzen",
+        durationLabel: "Noch 12 Min",
         accent: "teal"
       },
       {
-        title: secondSecondary?.label ?? "Nominalisierung",
+        title: secondSecondary ? localizeGrammarSkillTitle(secondSecondary) : "Nominalisierung",
         summary: "Formale akademische Verdichtung mit stärkerem Registergefühl.",
         href: buildGrammarWorkspaceHref(
           (secondSecondary?.id ?? "grammar.register").replace(/\./g, "-"),
@@ -119,21 +145,21 @@ export function mapGrammarLibraryToViewModel(input: {
     ],
     curriculumGroups: [
       {
-        title: "Word Order & Sentence Structure",
+        title: "Wortstellung & Satzstruktur",
         accent: "primary",
         lessons: lessonSource.slice(0, 3).map(toLesson)
       },
       {
-        title: "Verb Mastery & Academic Register",
+        title: "Verbbeherrschung & akademisches Register",
         accent: "secondary",
         lessons: lessonSource.slice(3, 6).map((skill, index) => toLesson(skill, index + 3))
       }
     ],
     filters: {
       statuses: [
-        { label: "Not Started", count: Math.max(3, Math.round(grammarSkills.length * 0.45)), active: false },
-        { label: "In Progress", count: Math.max(2, Math.round(grammarSkills.length * 0.18)), active: true },
-        { label: "Mastered", count: Math.max(2, Math.round(grammarSkills.length * 0.28)), active: false }
+        { label: "Nicht begonnen", count: Math.max(3, Math.round(grammarSkills.length * 0.45)), active: false },
+        { label: "In Arbeit", count: Math.max(2, Math.round(grammarSkills.length * 0.18)), active: true },
+        { label: "Abgeschlossen", count: Math.max(2, Math.round(grammarSkills.length * 0.28)), active: false }
       ],
       levels: [
         { label: "B2", active: false },
@@ -143,16 +169,16 @@ export function mapGrammarLibraryToViewModel(input: {
       skills: [
         { label: "Schreiben", active: false },
         { label: "Sprechen", active: false },
-        { label: "Academic Reading", active: true },
+        { label: "Akademisches Lesen", active: true },
         { label: "Hören", active: false }
       ]
     },
     pulse: {
-      title: "Study Pulse",
+      title: "Lernimpuls",
       text:
         "Du hältst aktuell ein ruhiges, aber konstantes Grammatiktempo. In diesem Rhythmus ist der C1-Kernpfad gut stabilisierbar.",
       metricLabel: "Konsistenz",
-      metricValue: mastery >= 70 ? "4 lessons/week" : "3 lessons/week"
+      metricValue: mastery >= 70 ? "4 Lektionen/Woche" : "3 Lektionen/Woche"
     }
   };
 }

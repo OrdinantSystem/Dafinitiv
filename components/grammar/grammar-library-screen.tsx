@@ -13,12 +13,12 @@ export function GrammarLibraryScreen({ viewModel }: { viewModel: GrammarLibraryV
     <div className="mx-auto max-w-editorial space-y-10">
       <section className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-3xl">
-          <Pill>Adaptive Remediation</Pill>
+          <Pill>Adaptive Förderung</Pill>
           <h1 className="editorial-title mt-5">{viewModel.title}</h1>
           <p className="editorial-subtitle mt-5">{viewModel.subtitle}</p>
         </div>
         <div className="rounded-[2rem] bg-surface-container-lowest px-6 py-6 shadow-paper ghost-outline md:min-w-[220px] md:px-8">
-          <p className="editorial-kicker">Overall Mastery</p>
+          <p className="editorial-kicker">Gesamtbeherrschung</p>
           <p className="mt-3 text-5xl font-extrabold tracking-[-0.05em] text-primary">
             {viewModel.mastery}%
           </p>
@@ -28,7 +28,7 @@ export function GrammarLibraryScreen({ viewModel }: { viewModel: GrammarLibraryV
       <section className="grid gap-6 xl:grid-cols-12">
         <Card className="relative xl:col-span-6" tone="accent">
           <div className="relative z-10 flex h-full flex-col gap-6">
-            <Pill tone="contrast">Priority Recommendation</Pill>
+            <Pill tone="contrast">Priorisierte Empfehlung</Pill>
             <div>
               <h2 className="text-[2.25rem] font-extrabold leading-tight tracking-[-0.04em] text-white">
                 {viewModel.featuredRecommendation.title}
@@ -46,7 +46,7 @@ export function GrammarLibraryScreen({ viewModel }: { viewModel: GrammarLibraryV
             </div>
             <div className="mt-auto flex flex-wrap items-center gap-4">
               <ButtonLink href={viewModel.featuredRecommendation.href} variant="quiet">
-                Start Practice
+                Praxis starten
               </ButtonLink>
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-white/72">
                 <AppIcon className="h-4 w-4" name="clock" />
@@ -165,11 +165,11 @@ export function GrammarLibraryScreen({ viewModel }: { viewModel: GrammarLibraryV
 
         <aside className="space-y-8 xl:sticky xl:top-[5.75rem] xl:self-start">
           <Card className="space-y-8" tone="inset">
-            <h3 className="editorial-kicker">Refine Library</h3>
+            <h3 className="editorial-kicker">Bibliothek verfeinern</h3>
 
             <div className="space-y-4">
               <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-primary">
-                Progress Status
+                Lernstatus
               </p>
               <div className="space-y-3">
                 {viewModel.filters.statuses.map((status) => (
@@ -191,7 +191,7 @@ export function GrammarLibraryScreen({ viewModel }: { viewModel: GrammarLibraryV
 
             <div className="space-y-4">
               <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-primary">
-                Proficiency Level
+                Kompetenzniveau
               </p>
               <div className="flex gap-2">
                 {viewModel.filters.levels.map((level) => (
@@ -212,7 +212,7 @@ export function GrammarLibraryScreen({ viewModel }: { viewModel: GrammarLibraryV
 
             <div className="space-y-4">
               <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-primary">
-                Skill Relevance
+                Fertigkeitsrelevanz
               </p>
               <div className="flex flex-wrap gap-2">
                 {viewModel.filters.skills.map((skill) => (
@@ -224,7 +224,7 @@ export function GrammarLibraryScreen({ viewModel }: { viewModel: GrammarLibraryV
             </div>
 
             <ButtonLink className="w-full justify-center" href="/grammar-library" variant="secondary">
-              Clear All Filters
+              Alle Filter löschen
             </ButtonLink>
           </Card>
 

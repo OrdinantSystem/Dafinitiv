@@ -38,6 +38,14 @@ test("grammar and notebook mappers surface focused routes", () => {
 
   assert.equal(grammarViewModel.featuredRecommendation.href.startsWith("/workspace/grammar/"), true);
   assert.equal(notebookViewModel.featuredEntry.href.startsWith("/workspace/mistake/"), true);
+  assert.equal(grammarViewModel.title, "Grammatikbibliothek");
+  assert.equal(grammarViewModel.secondaryRecommendations[0]?.statusLabel, "Fortsetzen");
+  assert.equal(
+    grammarViewModel.filters.statuses.map((status) => status.label).join(", "),
+    "Nicht begonnen, In Arbeit, Abgeschlossen"
+  );
+  assert.equal(grammarViewModel.filters.skills[2]?.label, "Akademisches Lesen");
+  assert.equal(grammarViewModel.pulse.title, "Lernimpuls");
 });
 
 test("section hub task cards always expose concrete timing labels", () => {
