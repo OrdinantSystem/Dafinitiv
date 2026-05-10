@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 
 const THINK_OPEN_TAG = "<think>";
 const THINK_CLOSE_TAG = "</think>";
+const API_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 function createMessageId(prefix: string): string {
   return prefix + "-" + Date.now() + "-" + Math.round(Math.random() * 100000);
@@ -573,7 +574,7 @@ export function LlmTestChat({
           messages: requestMessages
         });
 
-        const response = await fetch("/api/llm-test/stream", {
+        const response = await fetch(`${API_BASE_PATH}/api/llm-test/stream`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
