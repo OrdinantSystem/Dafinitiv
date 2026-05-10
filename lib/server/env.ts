@@ -24,7 +24,7 @@ const booleanFromEnv = z.preprocess((value) => {
 const envSchema = z.object({
   OPENAI_API_KEY: optionalString,
   OPENAI_BASE_URL: z.string().default("https://api.minimax.io/v1"),
-  OPENAI_MODEL: z.string().default("MiniMax-M2.5"),
+  OPENAI_MODEL: z.string().default("MiniMax-M2.7"),
   APP_ENABLE_REAL_LLM: booleanFromEnv.default(false),
   APP_ENABLE_DEBUG_LOGS: booleanFromEnv.default(false),
   APP_DEMO_USER_ID: z.string().default("demo-lerner")
@@ -53,7 +53,7 @@ export function getProviderRuntimeStatus(env: ServerEnv): ProviderRuntimeStatus 
       enabled: true,
       mode: "live",
       label: "MiniMax live",
-      description: "Das Workspace-Backend verwendet MiniMax-M2.5 über das OpenAI SDK."
+      description: "Das Workspace-Backend verwendet MiniMax-M2.7 über das OpenAI SDK."
     };
   }
 

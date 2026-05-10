@@ -68,7 +68,7 @@ function buildReport(
     providerTrace: {
       mode: "structured_llm",
       providerId: "demo-seed",
-      model: "MiniMax-M2.5"
+      model: "MiniMax-M2.7"
     }
   };
 }

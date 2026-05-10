@@ -57,7 +57,7 @@ To switch from demo mode to MiniMax:
 ```env
 OPENAI_API_KEY=your_key_here
 OPENAI_BASE_URL=https://api.minimax.io/v1
-OPENAI_MODEL=MiniMax-M2.5
+OPENAI_MODEL=MiniMax-M2.7
 APP_ENABLE_REAL_LLM=true
 APP_DEMO_USER_ID=demo-lerner
 ```

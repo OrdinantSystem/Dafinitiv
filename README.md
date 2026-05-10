@@ -8,7 +8,7 @@ The repository now includes:
 - a typed TestDaF domain model
 - a prompt library for official task types and remediation
 - focused AI services for generation, evaluation, feedback, planning, and grammar support
-- a provider layer that can run in demo fallback mode or against MiniMax-M2.5 through the OpenAI SDK
+- a provider layer that can run in demo fallback mode or against MiniMax-M2.7 through the OpenAI SDK
 
 The current product is built for guided practice first, with shared infrastructure for grammar drills, mistake review, and mock exams.
 
@@ -76,7 +76,7 @@ Copy [`.env.example`](./.env.example) to `.env.local`.
 
 - `OPENAI_API_KEY`: API key for a compatible endpoint such as MiniMax
 - `OPENAI_BASE_URL`: defaults to `https://api.minimax.io/v1`
-- `OPENAI_MODEL`: defaults to `MiniMax-M2.5`
+- `OPENAI_MODEL`: defaults to `MiniMax-M2.7`
 - `APP_ENABLE_REAL_LLM`: set to `true` to enable the live provider
 - `APP_ENABLE_DEBUG_LOGS`: set to `true` to print provider/workspace traces and show a debug card in workspace pages
 - `APP_DEMO_USER_ID`: demo learner id used for local data seeding
@@ -86,7 +86,7 @@ Example live setup:
 ```env
 OPENAI_API_KEY=your_key_here
 OPENAI_BASE_URL=https://api.minimax.io/v1
-OPENAI_MODEL=MiniMax-M2.5
+OPENAI_MODEL=MiniMax-M2.7
 APP_ENABLE_REAL_LLM=true
 APP_ENABLE_DEBUG_LOGS=true
 APP_DEMO_USER_ID=demo-lerner

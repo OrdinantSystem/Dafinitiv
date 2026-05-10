@@ -17,7 +17,7 @@ test("provider router prioritizes the OpenAI-compatible provider when configured
     APP_ENABLE_REAL_LLM: "true",
     OPENAI_API_KEY: "secret",
     OPENAI_BASE_URL: "https://api.minimax.io/v1",
-    OPENAI_MODEL: "MiniMax-M2.5"
+    OPENAI_MODEL: "MiniMax-M2.7"
   });
 
   assert.equal(bundle.runtime.mode, "live");

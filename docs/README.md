@@ -14,25 +14,29 @@ If you are new to the repository, read these documents in order:
 6. [Server Data Flow](./server-data-flow.md)
 7. [Modification Hotspots](./modification-hotspots.md)
 8. [Verification Workflow](./verification-workflow.md)
+9. [Multica Agent Routing](./multica-agent-routing.md)
 
 ## Core Product Docs
 
-9. [Testing](./testing.md)
-10. [Domain Model](./domain-model.md)
-11. [Agents](./agents.md)
-12. [Prompt System](./prompts.md)
-13. [Workflows](./workflows.md)
-14. [Providers](./providers.md)
-15. [AI System Design](./ai-system-design.md)
-16. [TestDaF Digital Research](./testdaf-digital-research.md)
+10. [Testing](./testing.md)
+11. [Domain Model](./domain-model.md)
+12. [Agents](./agents.md)
+13. [Prompt System](./prompts.md)
+14. [Workflows](./workflows.md)
+15. [Providers](./providers.md)
+16. [MiniMax-M2.7 Provider and Prompt Audit](./minimax-m27-provider-prompt-audit.md)
+17. [AI System Design](./ai-system-design.md)
+18. [TestDaF Digital Research](./testdaf-digital-research.md)
+19. [TestDaF Fidelity v1 Review](./testdaf-fidelity-v1-review.md)
+20. [Adaptive Learning Loop Next Slice](./adaptive-learning-loop-next-slice.md)
 
 ## Historical / Design Context
 
-17. [Stitch UI Prompting](./stitch-ui-prompting.md)
-18. [Stitch View Prompts](./stitch-view-prompts.md)
-19. [Website Agent Handoff](./website-agent-handoff.md)
-20. [Tabla Maestra Grammar](./tabla-maestra-grammar.md)
-21. [Grammar Sections](./grammar-sections.md)
+18. [Stitch UI Prompting](./stitch-ui-prompting.md)
+19. [Stitch View Prompts](./stitch-view-prompts.md)
+20. [Website Agent Handoff](./website-agent-handoff.md)
+21. [Tabla Maestra Grammar](./tabla-maestra-grammar.md)
+22. [Grammar Sections](./grammar-sections.md)
 
 ## What These Docs Cover
 
