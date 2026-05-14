@@ -8,6 +8,7 @@ const allowedDevOrigins = (process.env.NEXT_ALLOWED_DEV_ORIGINS || '127.0.0.1,lo
 const nextConfig = {
   allowedDevOrigins,
   basePath,
+  output: 'standalone',
   reactStrictMode: true
 };
 
